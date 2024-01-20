@@ -383,7 +383,7 @@ export const UserWhereInputSchema: z.ZodType<Prisma.UserWhereInput> = z
     Posts: z.lazy(() => PostListRelationFilterSchema).optional(),
     Comments: z.lazy(() => CommentListRelationFilterSchema).optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.UserWhereInput>;
 
 export const UserOrderByWithRelationInputSchema: z.ZodType<Prisma.UserOrderByWithRelationInput> =
   z
@@ -439,7 +439,7 @@ export const UserOrderByWithRelationInputSchema: z.ZodType<Prisma.UserOrderByWit
         .lazy(() => CommentOrderByRelationAggregateInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserOrderByWithRelationInput>;
 
 export const UserWhereUniqueInputSchema: z.ZodType<Prisma.UserWhereUniqueInput> =
   z
@@ -514,7 +514,7 @@ export const UserWhereUniqueInputSchema: z.ZodType<Prisma.UserWhereUniqueInput> 
           Comments: z.lazy(() => CommentListRelationFilterSchema).optional(),
         })
         .strict(),
-    );
+    ) as z.ZodType<Prisma.UserWhereUniqueInput>;
 
 export const UserOrderByWithAggregationInputSchema: z.ZodType<Prisma.UserOrderByWithAggregationInput> =
   z
@@ -569,7 +569,7 @@ export const UserOrderByWithAggregationInputSchema: z.ZodType<Prisma.UserOrderBy
       _max: z.lazy(() => UserMaxOrderByAggregateInputSchema).optional(),
       _min: z.lazy(() => UserMinOrderByAggregateInputSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserOrderByWithAggregationInput>;
 
 export const UserScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.UserScalarWhereWithAggregatesInput> =
   z
@@ -652,7 +652,7 @@ export const UserScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.UserScal
         .optional()
         .nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserScalarWhereWithAggregatesInput>;
 
 export const CategoryWhereInputSchema: z.ZodType<Prisma.CategoryWhereInput> = z
   .object({
@@ -676,7 +676,7 @@ export const CategoryWhereInputSchema: z.ZodType<Prisma.CategoryWhereInput> = z
     name: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
     Posts: z.lazy(() => PostListRelationFilterSchema).optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.CategoryWhereInput>;
 
 export const CategoryOrderByWithRelationInputSchema: z.ZodType<Prisma.CategoryOrderByWithRelationInput> =
   z
@@ -685,7 +685,7 @@ export const CategoryOrderByWithRelationInputSchema: z.ZodType<Prisma.CategoryOr
       name: z.lazy(() => SortOrderSchema).optional(),
       Posts: z.lazy(() => PostOrderByRelationAggregateInputSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryOrderByWithRelationInput>;
 
 export const CategoryWhereUniqueInputSchema: z.ZodType<Prisma.CategoryWhereUniqueInput> =
   z
@@ -718,7 +718,7 @@ export const CategoryWhereUniqueInputSchema: z.ZodType<Prisma.CategoryWhereUniqu
           Posts: z.lazy(() => PostListRelationFilterSchema).optional(),
         })
         .strict(),
-    );
+    ) as z.ZodType<Prisma.CategoryWhereUniqueInput>;
 
 export const CategoryOrderByWithAggregationInputSchema: z.ZodType<Prisma.CategoryOrderByWithAggregationInput> =
   z
@@ -729,7 +729,7 @@ export const CategoryOrderByWithAggregationInputSchema: z.ZodType<Prisma.Categor
       _max: z.lazy(() => CategoryMaxOrderByAggregateInputSchema).optional(),
       _min: z.lazy(() => CategoryMinOrderByAggregateInputSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryOrderByWithAggregationInput>;
 
 export const CategoryScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.CategoryScalarWhereWithAggregatesInput> =
   z
@@ -757,7 +757,7 @@ export const CategoryScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.Cate
         .union([z.lazy(() => StringWithAggregatesFilterSchema), z.string()])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryScalarWhereWithAggregatesInput>;
 
 export const PostWhereInputSchema: z.ZodType<Prisma.PostWhereInput> = z
   .object({
@@ -799,7 +799,7 @@ export const PostWhereInputSchema: z.ZodType<Prisma.PostWhereInput> = z
     Categories: z.lazy(() => CategoryListRelationFilterSchema).optional(),
     Comments: z.lazy(() => CommentListRelationFilterSchema).optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.PostWhereInput>;
 
 export const PostOrderByWithRelationInputSchema: z.ZodType<Prisma.PostOrderByWithRelationInput> =
   z
@@ -819,7 +819,7 @@ export const PostOrderByWithRelationInputSchema: z.ZodType<Prisma.PostOrderByWit
         .lazy(() => CommentOrderByRelationAggregateInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostOrderByWithRelationInput>;
 
 export const PostWhereUniqueInputSchema: z.ZodType<Prisma.PostWhereUniqueInput> =
   z
@@ -874,7 +874,7 @@ export const PostWhereUniqueInputSchema: z.ZodType<Prisma.PostWhereUniqueInput> 
           Comments: z.lazy(() => CommentListRelationFilterSchema).optional(),
         })
         .strict(),
-    );
+    ) as z.ZodType<Prisma.PostWhereUniqueInput>;
 
 export const PostOrderByWithAggregationInputSchema: z.ZodType<Prisma.PostOrderByWithAggregationInput> =
   z
@@ -890,7 +890,7 @@ export const PostOrderByWithAggregationInputSchema: z.ZodType<Prisma.PostOrderBy
       _max: z.lazy(() => PostMaxOrderByAggregateInputSchema).optional(),
       _min: z.lazy(() => PostMinOrderByAggregateInputSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostOrderByWithAggregationInput>;
 
 export const PostScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.PostScalarWhereWithAggregatesInput> =
   z
@@ -936,7 +936,7 @@ export const PostScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.PostScal
         .union([z.lazy(() => StringWithAggregatesFilterSchema), z.string()])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostScalarWhereWithAggregatesInput>;
 
 export const CommentWhereInputSchema: z.ZodType<Prisma.CommentWhereInput> = z
   .object({
@@ -977,7 +977,7 @@ export const CommentWhereInputSchema: z.ZodType<Prisma.CommentWhereInput> = z
       .optional()
       .nullable(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.CommentWhereInput>;
 
 export const CommentOrderByWithRelationInputSchema: z.ZodType<Prisma.CommentOrderByWithRelationInput> =
   z
@@ -994,7 +994,7 @@ export const CommentOrderByWithRelationInputSchema: z.ZodType<Prisma.CommentOrde
       Post: z.lazy(() => PostOrderByWithRelationInputSchema).optional(),
       User: z.lazy(() => UserOrderByWithRelationInputSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentOrderByWithRelationInput>;
 
 export const CommentWhereUniqueInputSchema: z.ZodType<Prisma.CommentWhereUniqueInput> =
   z
@@ -1046,7 +1046,7 @@ export const CommentWhereUniqueInputSchema: z.ZodType<Prisma.CommentWhereUniqueI
             .nullable(),
         })
         .strict(),
-    );
+    ) as z.ZodType<Prisma.CommentWhereUniqueInput>;
 
 export const CommentOrderByWithAggregationInputSchema: z.ZodType<Prisma.CommentOrderByWithAggregationInput> =
   z
@@ -1064,7 +1064,7 @@ export const CommentOrderByWithAggregationInputSchema: z.ZodType<Prisma.CommentO
       _max: z.lazy(() => CommentMaxOrderByAggregateInputSchema).optional(),
       _min: z.lazy(() => CommentMinOrderByAggregateInputSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentOrderByWithAggregationInput>;
 
 export const CommentScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.CommentScalarWhereWithAggregatesInput> =
   z
@@ -1102,7 +1102,7 @@ export const CommentScalarWhereWithAggregatesInputSchema: z.ZodType<Prisma.Comme
         .optional()
         .nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentScalarWhereWithAggregatesInput>;
 
 export const UserCreateInputSchema: z.ZodType<Prisma.UserCreateInput> = z
   .object({
@@ -1124,7 +1124,7 @@ export const UserCreateInputSchema: z.ZodType<Prisma.UserCreateInput> = z
       .lazy(() => CommentCreateNestedManyWithoutUserInputSchema)
       .optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.UserCreateInput>;
 
 export const UserUncheckedCreateInputSchema: z.ZodType<Prisma.UserUncheckedCreateInput> =
   z
@@ -1147,7 +1147,7 @@ export const UserUncheckedCreateInputSchema: z.ZodType<Prisma.UserUncheckedCreat
         .lazy(() => CommentUncheckedCreateNestedManyWithoutUserInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserUncheckedCreateInput>;
 
 export const UserUpdateInputSchema: z.ZodType<Prisma.UserUpdateInput> = z
   .object({
@@ -1222,7 +1222,7 @@ export const UserUpdateInputSchema: z.ZodType<Prisma.UserUpdateInput> = z
       .lazy(() => CommentUpdateManyWithoutUserNestedInputSchema)
       .optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.UserUpdateInput>;
 
 export const UserUncheckedUpdateInputSchema: z.ZodType<Prisma.UserUncheckedUpdateInput> =
   z
@@ -1307,7 +1307,7 @@ export const UserUncheckedUpdateInputSchema: z.ZodType<Prisma.UserUncheckedUpdat
         .lazy(() => CommentUncheckedUpdateManyWithoutUserNestedInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserUncheckedUpdateInput>;
 
 export const UserCreateManyInputSchema: z.ZodType<Prisma.UserCreateManyInput> =
   z
@@ -1324,7 +1324,7 @@ export const UserCreateManyInputSchema: z.ZodType<Prisma.UserCreateManyInput> =
       linkedin: z.string().optional().nullable(),
       verified: z.boolean().optional().nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserCreateManyInput>;
 
 export const UserUpdateManyMutationInputSchema: z.ZodType<Prisma.UserUpdateManyMutationInput> =
   z
@@ -1403,7 +1403,7 @@ export const UserUpdateManyMutationInputSchema: z.ZodType<Prisma.UserUpdateManyM
         .optional()
         .nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserUpdateManyMutationInput>;
 
 export const UserUncheckedUpdateManyInputSchema: z.ZodType<Prisma.UserUncheckedUpdateManyInput> =
   z
@@ -1482,7 +1482,7 @@ export const UserUncheckedUpdateManyInputSchema: z.ZodType<Prisma.UserUncheckedU
         .optional()
         .nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserUncheckedUpdateManyInput>;
 
 export const CategoryCreateInputSchema: z.ZodType<Prisma.CategoryCreateInput> =
   z
@@ -1493,7 +1493,7 @@ export const CategoryCreateInputSchema: z.ZodType<Prisma.CategoryCreateInput> =
         .lazy(() => PostCreateNestedManyWithoutCategoriesInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryCreateInput>;
 
 export const CategoryUncheckedCreateInputSchema: z.ZodType<Prisma.CategoryUncheckedCreateInput> =
   z
@@ -1504,7 +1504,7 @@ export const CategoryUncheckedCreateInputSchema: z.ZodType<Prisma.CategoryUnchec
         .lazy(() => PostUncheckedCreateNestedManyWithoutCategoriesInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryUncheckedCreateInput>;
 
 export const CategoryUpdateInputSchema: z.ZodType<Prisma.CategoryUpdateInput> =
   z
@@ -1525,7 +1525,7 @@ export const CategoryUpdateInputSchema: z.ZodType<Prisma.CategoryUpdateInput> =
         .lazy(() => PostUpdateManyWithoutCategoriesNestedInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryUpdateInput>;
 
 export const CategoryUncheckedUpdateInputSchema: z.ZodType<Prisma.CategoryUncheckedUpdateInput> =
   z
@@ -1546,7 +1546,7 @@ export const CategoryUncheckedUpdateInputSchema: z.ZodType<Prisma.CategoryUnchec
         .lazy(() => PostUncheckedUpdateManyWithoutCategoriesNestedInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryUncheckedUpdateInput>;
 
 export const CategoryCreateManyInputSchema: z.ZodType<Prisma.CategoryCreateManyInput> =
   z
@@ -1554,7 +1554,7 @@ export const CategoryCreateManyInputSchema: z.ZodType<Prisma.CategoryCreateManyI
       id: z.string().cuid().optional(),
       name: z.string(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryCreateManyInput>;
 
 export const CategoryUpdateManyMutationInputSchema: z.ZodType<Prisma.CategoryUpdateManyMutationInput> =
   z
@@ -1572,7 +1572,7 @@ export const CategoryUpdateManyMutationInputSchema: z.ZodType<Prisma.CategoryUpd
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryUpdateManyMutationInput>;
 
 export const CategoryUncheckedUpdateManyInputSchema: z.ZodType<Prisma.CategoryUncheckedUpdateManyInput> =
   z
@@ -1590,7 +1590,7 @@ export const CategoryUncheckedUpdateManyInputSchema: z.ZodType<Prisma.CategoryUn
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryUncheckedUpdateManyInput>;
 
 export const PostCreateInputSchema: z.ZodType<Prisma.PostCreateInput> = z
   .object({
@@ -1608,7 +1608,7 @@ export const PostCreateInputSchema: z.ZodType<Prisma.PostCreateInput> = z
       .lazy(() => CommentCreateNestedManyWithoutPostInputSchema)
       .optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.PostCreateInput>;
 
 export const PostUncheckedCreateInputSchema: z.ZodType<Prisma.PostUncheckedCreateInput> =
   z
@@ -1627,7 +1627,7 @@ export const PostUncheckedCreateInputSchema: z.ZodType<Prisma.PostUncheckedCreat
         .lazy(() => CommentUncheckedCreateNestedManyWithoutPostInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUncheckedCreateInput>;
 
 export const PostUpdateInputSchema: z.ZodType<Prisma.PostUpdateInput> = z
   .object({
@@ -1665,7 +1665,7 @@ export const PostUpdateInputSchema: z.ZodType<Prisma.PostUpdateInput> = z
       .lazy(() => CommentUpdateManyWithoutPostNestedInputSchema)
       .optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.PostUpdateInput>;
 
 export const PostUncheckedUpdateInputSchema: z.ZodType<Prisma.PostUncheckedUpdateInput> =
   z
@@ -1719,7 +1719,7 @@ export const PostUncheckedUpdateInputSchema: z.ZodType<Prisma.PostUncheckedUpdat
         .lazy(() => CommentUncheckedUpdateManyWithoutPostNestedInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUncheckedUpdateInput>;
 
 export const PostCreateManyInputSchema: z.ZodType<Prisma.PostCreateManyInput> =
   z
@@ -1732,7 +1732,7 @@ export const PostCreateManyInputSchema: z.ZodType<Prisma.PostCreateManyInput> =
       header: z.string(),
       authorId: z.string(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostCreateManyInput>;
 
 export const PostUpdateManyMutationInputSchema: z.ZodType<Prisma.PostUpdateManyMutationInput> =
   z
@@ -1774,7 +1774,7 @@ export const PostUpdateManyMutationInputSchema: z.ZodType<Prisma.PostUpdateManyM
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUpdateManyMutationInput>;
 
 export const PostUncheckedUpdateManyInputSchema: z.ZodType<Prisma.PostUncheckedUpdateManyInput> =
   z
@@ -1822,7 +1822,7 @@ export const PostUncheckedUpdateManyInputSchema: z.ZodType<Prisma.PostUncheckedU
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUncheckedUpdateManyInput>;
 
 export const CommentCreateInputSchema: z.ZodType<Prisma.CommentCreateInput> = z
   .object({
@@ -1833,7 +1833,7 @@ export const CommentCreateInputSchema: z.ZodType<Prisma.CommentCreateInput> = z
       .lazy(() => UserCreateNestedOneWithoutCommentsInputSchema)
       .optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.CommentCreateInput>;
 
 export const CommentUncheckedCreateInputSchema: z.ZodType<Prisma.CommentUncheckedCreateInput> =
   z
@@ -1843,7 +1843,7 @@ export const CommentUncheckedCreateInputSchema: z.ZodType<Prisma.CommentUnchecke
       postId: z.string(),
       userId: z.string().optional().nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUncheckedCreateInput>;
 
 export const CommentUpdateInputSchema: z.ZodType<Prisma.CommentUpdateInput> = z
   .object({
@@ -1863,7 +1863,7 @@ export const CommentUpdateInputSchema: z.ZodType<Prisma.CommentUpdateInput> = z
       .lazy(() => UserUpdateOneWithoutCommentsNestedInputSchema)
       .optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.CommentUpdateInput>;
 
 export const CommentUncheckedUpdateInputSchema: z.ZodType<Prisma.CommentUncheckedUpdateInput> =
   z
@@ -1894,7 +1894,7 @@ export const CommentUncheckedUpdateInputSchema: z.ZodType<Prisma.CommentUnchecke
         .optional()
         .nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUncheckedUpdateInput>;
 
 export const CommentCreateManyInputSchema: z.ZodType<Prisma.CommentCreateManyInput> =
   z
@@ -1904,7 +1904,7 @@ export const CommentCreateManyInputSchema: z.ZodType<Prisma.CommentCreateManyInp
       postId: z.string(),
       userId: z.string().optional().nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentCreateManyInput>;
 
 export const CommentUpdateManyMutationInputSchema: z.ZodType<Prisma.CommentUpdateManyMutationInput> =
   z
@@ -1922,7 +1922,7 @@ export const CommentUpdateManyMutationInputSchema: z.ZodType<Prisma.CommentUpdat
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUpdateManyMutationInput>;
 
 export const CommentUncheckedUpdateManyInputSchema: z.ZodType<Prisma.CommentUncheckedUpdateManyInput> =
   z
@@ -1953,7 +1953,7 @@ export const CommentUncheckedUpdateManyInputSchema: z.ZodType<Prisma.CommentUnch
         .optional()
         .nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUncheckedUpdateManyInput>;
 
 export const StringFilterSchema: z.ZodType<Prisma.StringFilter> = z
   .object({
@@ -1972,7 +1972,7 @@ export const StringFilterSchema: z.ZodType<Prisma.StringFilter> = z
       .union([z.string(), z.lazy(() => NestedStringFilterSchema)])
       .optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.StringFilter>;
 
 export const BoolNullableFilterSchema: z.ZodType<Prisma.BoolNullableFilter> = z
   .object({
@@ -1982,7 +1982,7 @@ export const BoolNullableFilterSchema: z.ZodType<Prisma.BoolNullableFilter> = z
       .optional()
       .nullable(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.BoolNullableFilter>;
 
 export const StringNullableFilterSchema: z.ZodType<Prisma.StringNullableFilter> =
   z
@@ -2003,7 +2003,7 @@ export const StringNullableFilterSchema: z.ZodType<Prisma.StringNullableFilter> 
         .optional()
         .nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.StringNullableFilter>;
 
 export const PostListRelationFilterSchema: z.ZodType<Prisma.PostListRelationFilter> =
   z
@@ -2012,7 +2012,7 @@ export const PostListRelationFilterSchema: z.ZodType<Prisma.PostListRelationFilt
       some: z.lazy(() => PostWhereInputSchema).optional(),
       none: z.lazy(() => PostWhereInputSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostListRelationFilter>;
 
 export const CommentListRelationFilterSchema: z.ZodType<Prisma.CommentListRelationFilter> =
   z
@@ -2021,28 +2021,28 @@ export const CommentListRelationFilterSchema: z.ZodType<Prisma.CommentListRelati
       some: z.lazy(() => CommentWhereInputSchema).optional(),
       none: z.lazy(() => CommentWhereInputSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentListRelationFilter>;
 
 export const SortOrderInputSchema: z.ZodType<Prisma.SortOrderInput> = z
   .object({
     sort: z.lazy(() => SortOrderSchema),
     nulls: z.lazy(() => NullsOrderSchema).optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.SortOrderInput>;
 
 export const PostOrderByRelationAggregateInputSchema: z.ZodType<Prisma.PostOrderByRelationAggregateInput> =
   z
     .object({
       _count: z.lazy(() => SortOrderSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostOrderByRelationAggregateInput>;
 
 export const CommentOrderByRelationAggregateInputSchema: z.ZodType<Prisma.CommentOrderByRelationAggregateInput> =
   z
     .object({
       _count: z.lazy(() => SortOrderSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentOrderByRelationAggregateInput>;
 
 export const UserCountOrderByAggregateInputSchema: z.ZodType<Prisma.UserCountOrderByAggregateInput> =
   z
@@ -2059,7 +2059,7 @@ export const UserCountOrderByAggregateInputSchema: z.ZodType<Prisma.UserCountOrd
       linkedin: z.lazy(() => SortOrderSchema).optional(),
       verified: z.lazy(() => SortOrderSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserCountOrderByAggregateInput>;
 
 export const UserMaxOrderByAggregateInputSchema: z.ZodType<Prisma.UserMaxOrderByAggregateInput> =
   z
@@ -2076,7 +2076,7 @@ export const UserMaxOrderByAggregateInputSchema: z.ZodType<Prisma.UserMaxOrderBy
       linkedin: z.lazy(() => SortOrderSchema).optional(),
       verified: z.lazy(() => SortOrderSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserMaxOrderByAggregateInput>;
 
 export const UserMinOrderByAggregateInputSchema: z.ZodType<Prisma.UserMinOrderByAggregateInput> =
   z
@@ -2093,7 +2093,7 @@ export const UserMinOrderByAggregateInputSchema: z.ZodType<Prisma.UserMinOrderBy
       linkedin: z.lazy(() => SortOrderSchema).optional(),
       verified: z.lazy(() => SortOrderSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserMinOrderByAggregateInput>;
 
 export const StringWithAggregatesFilterSchema: z.ZodType<Prisma.StringWithAggregatesFilter> =
   z
@@ -2119,7 +2119,7 @@ export const StringWithAggregatesFilterSchema: z.ZodType<Prisma.StringWithAggreg
       _min: z.lazy(() => NestedStringFilterSchema).optional(),
       _max: z.lazy(() => NestedStringFilterSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.StringWithAggregatesFilter>;
 
 export const BoolNullableWithAggregatesFilterSchema: z.ZodType<Prisma.BoolNullableWithAggregatesFilter> =
   z
@@ -2136,7 +2136,7 @@ export const BoolNullableWithAggregatesFilterSchema: z.ZodType<Prisma.BoolNullab
       _min: z.lazy(() => NestedBoolNullableFilterSchema).optional(),
       _max: z.lazy(() => NestedBoolNullableFilterSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.BoolNullableWithAggregatesFilter>;
 
 export const StringNullableWithAggregatesFilterSchema: z.ZodType<Prisma.StringNullableWithAggregatesFilter> =
   z
@@ -2163,7 +2163,7 @@ export const StringNullableWithAggregatesFilterSchema: z.ZodType<Prisma.StringNu
       _min: z.lazy(() => NestedStringNullableFilterSchema).optional(),
       _max: z.lazy(() => NestedStringNullableFilterSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.StringNullableWithAggregatesFilter>;
 
 export const CategoryCountOrderByAggregateInputSchema: z.ZodType<Prisma.CategoryCountOrderByAggregateInput> =
   z
@@ -2171,7 +2171,7 @@ export const CategoryCountOrderByAggregateInputSchema: z.ZodType<Prisma.Category
       id: z.lazy(() => SortOrderSchema).optional(),
       name: z.lazy(() => SortOrderSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryCountOrderByAggregateInput>;
 
 export const CategoryMaxOrderByAggregateInputSchema: z.ZodType<Prisma.CategoryMaxOrderByAggregateInput> =
   z
@@ -2179,7 +2179,7 @@ export const CategoryMaxOrderByAggregateInputSchema: z.ZodType<Prisma.CategoryMa
       id: z.lazy(() => SortOrderSchema).optional(),
       name: z.lazy(() => SortOrderSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryMaxOrderByAggregateInput>;
 
 export const CategoryMinOrderByAggregateInputSchema: z.ZodType<Prisma.CategoryMinOrderByAggregateInput> =
   z
@@ -2187,7 +2187,7 @@ export const CategoryMinOrderByAggregateInputSchema: z.ZodType<Prisma.CategoryMi
       id: z.lazy(() => SortOrderSchema).optional(),
       name: z.lazy(() => SortOrderSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryMinOrderByAggregateInput>;
 
 export const DateTimeFilterSchema: z.ZodType<Prisma.DateTimeFilter> = z
   .object({
@@ -2202,14 +2202,14 @@ export const DateTimeFilterSchema: z.ZodType<Prisma.DateTimeFilter> = z
       .union([z.coerce.date(), z.lazy(() => NestedDateTimeFilterSchema)])
       .optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.DateTimeFilter>;
 
 export const UserRelationFilterSchema: z.ZodType<Prisma.UserRelationFilter> = z
   .object({
     is: z.lazy(() => UserWhereInputSchema).optional(),
     isNot: z.lazy(() => UserWhereInputSchema).optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.UserRelationFilter>;
 
 export const CategoryListRelationFilterSchema: z.ZodType<Prisma.CategoryListRelationFilter> =
   z
@@ -2218,14 +2218,14 @@ export const CategoryListRelationFilterSchema: z.ZodType<Prisma.CategoryListRela
       some: z.lazy(() => CategoryWhereInputSchema).optional(),
       none: z.lazy(() => CategoryWhereInputSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryListRelationFilter>;
 
 export const CategoryOrderByRelationAggregateInputSchema: z.ZodType<Prisma.CategoryOrderByRelationAggregateInput> =
   z
     .object({
       _count: z.lazy(() => SortOrderSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryOrderByRelationAggregateInput>;
 
 export const PostCountOrderByAggregateInputSchema: z.ZodType<Prisma.PostCountOrderByAggregateInput> =
   z
@@ -2238,7 +2238,7 @@ export const PostCountOrderByAggregateInputSchema: z.ZodType<Prisma.PostCountOrd
       header: z.lazy(() => SortOrderSchema).optional(),
       authorId: z.lazy(() => SortOrderSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostCountOrderByAggregateInput>;
 
 export const PostMaxOrderByAggregateInputSchema: z.ZodType<Prisma.PostMaxOrderByAggregateInput> =
   z
@@ -2251,7 +2251,7 @@ export const PostMaxOrderByAggregateInputSchema: z.ZodType<Prisma.PostMaxOrderBy
       header: z.lazy(() => SortOrderSchema).optional(),
       authorId: z.lazy(() => SortOrderSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostMaxOrderByAggregateInput>;
 
 export const PostMinOrderByAggregateInputSchema: z.ZodType<Prisma.PostMinOrderByAggregateInput> =
   z
@@ -2264,7 +2264,7 @@ export const PostMinOrderByAggregateInputSchema: z.ZodType<Prisma.PostMinOrderBy
       header: z.lazy(() => SortOrderSchema).optional(),
       authorId: z.lazy(() => SortOrderSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostMinOrderByAggregateInput>;
 
 export const DateTimeWithAggregatesFilterSchema: z.ZodType<Prisma.DateTimeWithAggregatesFilter> =
   z
@@ -2286,14 +2286,14 @@ export const DateTimeWithAggregatesFilterSchema: z.ZodType<Prisma.DateTimeWithAg
       _min: z.lazy(() => NestedDateTimeFilterSchema).optional(),
       _max: z.lazy(() => NestedDateTimeFilterSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.DateTimeWithAggregatesFilter>;
 
 export const PostRelationFilterSchema: z.ZodType<Prisma.PostRelationFilter> = z
   .object({
     is: z.lazy(() => PostWhereInputSchema).optional(),
     isNot: z.lazy(() => PostWhereInputSchema).optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.PostRelationFilter>;
 
 export const UserNullableRelationFilterSchema: z.ZodType<Prisma.UserNullableRelationFilter> =
   z
@@ -2307,7 +2307,7 @@ export const UserNullableRelationFilterSchema: z.ZodType<Prisma.UserNullableRela
         .optional()
         .nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserNullableRelationFilter>;
 
 export const CommentCountOrderByAggregateInputSchema: z.ZodType<Prisma.CommentCountOrderByAggregateInput> =
   z
@@ -2317,7 +2317,7 @@ export const CommentCountOrderByAggregateInputSchema: z.ZodType<Prisma.CommentCo
       postId: z.lazy(() => SortOrderSchema).optional(),
       userId: z.lazy(() => SortOrderSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentCountOrderByAggregateInput>;
 
 export const CommentMaxOrderByAggregateInputSchema: z.ZodType<Prisma.CommentMaxOrderByAggregateInput> =
   z
@@ -2327,7 +2327,7 @@ export const CommentMaxOrderByAggregateInputSchema: z.ZodType<Prisma.CommentMaxO
       postId: z.lazy(() => SortOrderSchema).optional(),
       userId: z.lazy(() => SortOrderSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentMaxOrderByAggregateInput>;
 
 export const CommentMinOrderByAggregateInputSchema: z.ZodType<Prisma.CommentMinOrderByAggregateInput> =
   z
@@ -2337,7 +2337,7 @@ export const CommentMinOrderByAggregateInputSchema: z.ZodType<Prisma.CommentMinO
       postId: z.lazy(() => SortOrderSchema).optional(),
       userId: z.lazy(() => SortOrderSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentMinOrderByAggregateInput>;
 
 export const PostCreateNestedManyWithoutAuthorInputSchema: z.ZodType<Prisma.PostCreateNestedManyWithoutAuthorInput> =
   z
@@ -2366,7 +2366,7 @@ export const PostCreateNestedManyWithoutAuthorInputSchema: z.ZodType<Prisma.Post
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostCreateNestedManyWithoutAuthorInput>;
 
 export const CommentCreateNestedManyWithoutUserInputSchema: z.ZodType<Prisma.CommentCreateNestedManyWithoutUserInput> =
   z
@@ -2395,7 +2395,7 @@ export const CommentCreateNestedManyWithoutUserInputSchema: z.ZodType<Prisma.Com
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentCreateNestedManyWithoutUserInput>;
 
 export const PostUncheckedCreateNestedManyWithoutAuthorInputSchema: z.ZodType<Prisma.PostUncheckedCreateNestedManyWithoutAuthorInput> =
   z
@@ -2424,7 +2424,7 @@ export const PostUncheckedCreateNestedManyWithoutAuthorInputSchema: z.ZodType<Pr
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUncheckedCreateNestedManyWithoutAuthorInput>;
 
 export const CommentUncheckedCreateNestedManyWithoutUserInputSchema: z.ZodType<Prisma.CommentUncheckedCreateNestedManyWithoutUserInput> =
   z
@@ -2453,28 +2453,28 @@ export const CommentUncheckedCreateNestedManyWithoutUserInputSchema: z.ZodType<P
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUncheckedCreateNestedManyWithoutUserInput>;
 
 export const StringFieldUpdateOperationsInputSchema: z.ZodType<Prisma.StringFieldUpdateOperationsInput> =
   z
     .object({
       set: z.string().optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.StringFieldUpdateOperationsInput>;
 
 export const NullableBoolFieldUpdateOperationsInputSchema: z.ZodType<Prisma.NullableBoolFieldUpdateOperationsInput> =
   z
     .object({
       set: z.boolean().optional().nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.NullableBoolFieldUpdateOperationsInput>;
 
 export const NullableStringFieldUpdateOperationsInputSchema: z.ZodType<Prisma.NullableStringFieldUpdateOperationsInput> =
   z
     .object({
       set: z.string().optional().nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.NullableStringFieldUpdateOperationsInput>;
 
 export const PostUpdateManyWithoutAuthorNestedInputSchema: z.ZodType<Prisma.PostUpdateManyWithoutAuthorNestedInput> =
   z
@@ -2549,7 +2549,7 @@ export const PostUpdateManyWithoutAuthorNestedInputSchema: z.ZodType<Prisma.Post
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUpdateManyWithoutAuthorNestedInput>;
 
 export const CommentUpdateManyWithoutUserNestedInputSchema: z.ZodType<Prisma.CommentUpdateManyWithoutUserNestedInput> =
   z
@@ -2626,7 +2626,7 @@ export const CommentUpdateManyWithoutUserNestedInputSchema: z.ZodType<Prisma.Com
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUpdateManyWithoutUserNestedInput>;
 
 export const PostUncheckedUpdateManyWithoutAuthorNestedInputSchema: z.ZodType<Prisma.PostUncheckedUpdateManyWithoutAuthorNestedInput> =
   z
@@ -2701,7 +2701,7 @@ export const PostUncheckedUpdateManyWithoutAuthorNestedInputSchema: z.ZodType<Pr
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUncheckedUpdateManyWithoutAuthorNestedInput>;
 
 export const CommentUncheckedUpdateManyWithoutUserNestedInputSchema: z.ZodType<Prisma.CommentUncheckedUpdateManyWithoutUserNestedInput> =
   z
@@ -2778,7 +2778,7 @@ export const CommentUncheckedUpdateManyWithoutUserNestedInputSchema: z.ZodType<P
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUncheckedUpdateManyWithoutUserNestedInput>;
 
 export const PostCreateNestedManyWithoutCategoriesInputSchema: z.ZodType<Prisma.PostCreateNestedManyWithoutCategoriesInput> =
   z
@@ -2804,7 +2804,7 @@ export const PostCreateNestedManyWithoutCategoriesInputSchema: z.ZodType<Prisma.
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostCreateNestedManyWithoutCategoriesInput>;
 
 export const PostUncheckedCreateNestedManyWithoutCategoriesInputSchema: z.ZodType<Prisma.PostUncheckedCreateNestedManyWithoutCategoriesInput> =
   z
@@ -2830,7 +2830,7 @@ export const PostUncheckedCreateNestedManyWithoutCategoriesInputSchema: z.ZodTyp
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUncheckedCreateNestedManyWithoutCategoriesInput>;
 
 export const PostUpdateManyWithoutCategoriesNestedInputSchema: z.ZodType<Prisma.PostUpdateManyWithoutCategoriesNestedInput> =
   z
@@ -2904,7 +2904,7 @@ export const PostUpdateManyWithoutCategoriesNestedInputSchema: z.ZodType<Prisma.
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUpdateManyWithoutCategoriesNestedInput>;
 
 export const PostUncheckedUpdateManyWithoutCategoriesNestedInputSchema: z.ZodType<Prisma.PostUncheckedUpdateManyWithoutCategoriesNestedInput> =
   z
@@ -2978,7 +2978,7 @@ export const PostUncheckedUpdateManyWithoutCategoriesNestedInputSchema: z.ZodTyp
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUncheckedUpdateManyWithoutCategoriesNestedInput>;
 
 export const UserCreateNestedOneWithoutPostsInputSchema: z.ZodType<Prisma.UserCreateNestedOneWithoutPostsInput> =
   z
@@ -2994,7 +2994,7 @@ export const UserCreateNestedOneWithoutPostsInputSchema: z.ZodType<Prisma.UserCr
         .optional(),
       connect: z.lazy(() => UserWhereUniqueInputSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserCreateNestedOneWithoutPostsInput>;
 
 export const CategoryCreateNestedManyWithoutPostsInputSchema: z.ZodType<Prisma.CategoryCreateNestedManyWithoutPostsInput> =
   z
@@ -3020,7 +3020,7 @@ export const CategoryCreateNestedManyWithoutPostsInputSchema: z.ZodType<Prisma.C
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryCreateNestedManyWithoutPostsInput>;
 
 export const CommentCreateNestedManyWithoutPostInputSchema: z.ZodType<Prisma.CommentCreateNestedManyWithoutPostInput> =
   z
@@ -3049,7 +3049,7 @@ export const CommentCreateNestedManyWithoutPostInputSchema: z.ZodType<Prisma.Com
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentCreateNestedManyWithoutPostInput>;
 
 export const CategoryUncheckedCreateNestedManyWithoutPostsInputSchema: z.ZodType<Prisma.CategoryUncheckedCreateNestedManyWithoutPostsInput> =
   z
@@ -3075,7 +3075,7 @@ export const CategoryUncheckedCreateNestedManyWithoutPostsInputSchema: z.ZodType
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryUncheckedCreateNestedManyWithoutPostsInput>;
 
 export const CommentUncheckedCreateNestedManyWithoutPostInputSchema: z.ZodType<Prisma.CommentUncheckedCreateNestedManyWithoutPostInput> =
   z
@@ -3104,14 +3104,14 @@ export const CommentUncheckedCreateNestedManyWithoutPostInputSchema: z.ZodType<P
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUncheckedCreateNestedManyWithoutPostInput>;
 
 export const DateTimeFieldUpdateOperationsInputSchema: z.ZodType<Prisma.DateTimeFieldUpdateOperationsInput> =
   z
     .object({
       set: z.coerce.date().optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.DateTimeFieldUpdateOperationsInput>;
 
 export const UserUpdateOneRequiredWithoutPostsNestedInputSchema: z.ZodType<Prisma.UserUpdateOneRequiredWithoutPostsNestedInput> =
   z
@@ -3135,7 +3135,7 @@ export const UserUpdateOneRequiredWithoutPostsNestedInputSchema: z.ZodType<Prism
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserUpdateOneRequiredWithoutPostsNestedInput>;
 
 export const CategoryUpdateManyWithoutPostsNestedInputSchema: z.ZodType<Prisma.CategoryUpdateManyWithoutPostsNestedInput> =
   z
@@ -3209,7 +3209,7 @@ export const CategoryUpdateManyWithoutPostsNestedInputSchema: z.ZodType<Prisma.C
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryUpdateManyWithoutPostsNestedInput>;
 
 export const CommentUpdateManyWithoutPostNestedInputSchema: z.ZodType<Prisma.CommentUpdateManyWithoutPostNestedInput> =
   z
@@ -3286,7 +3286,7 @@ export const CommentUpdateManyWithoutPostNestedInputSchema: z.ZodType<Prisma.Com
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUpdateManyWithoutPostNestedInput>;
 
 export const CategoryUncheckedUpdateManyWithoutPostsNestedInputSchema: z.ZodType<Prisma.CategoryUncheckedUpdateManyWithoutPostsNestedInput> =
   z
@@ -3360,7 +3360,7 @@ export const CategoryUncheckedUpdateManyWithoutPostsNestedInputSchema: z.ZodType
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryUncheckedUpdateManyWithoutPostsNestedInput>;
 
 export const CommentUncheckedUpdateManyWithoutPostNestedInputSchema: z.ZodType<Prisma.CommentUncheckedUpdateManyWithoutPostNestedInput> =
   z
@@ -3437,7 +3437,7 @@ export const CommentUncheckedUpdateManyWithoutPostNestedInputSchema: z.ZodType<P
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUncheckedUpdateManyWithoutPostNestedInput>;
 
 export const PostCreateNestedOneWithoutCommentsInputSchema: z.ZodType<Prisma.PostCreateNestedOneWithoutCommentsInput> =
   z
@@ -3453,7 +3453,7 @@ export const PostCreateNestedOneWithoutCommentsInputSchema: z.ZodType<Prisma.Pos
         .optional(),
       connect: z.lazy(() => PostWhereUniqueInputSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostCreateNestedOneWithoutCommentsInput>;
 
 export const UserCreateNestedOneWithoutCommentsInputSchema: z.ZodType<Prisma.UserCreateNestedOneWithoutCommentsInput> =
   z
@@ -3469,7 +3469,7 @@ export const UserCreateNestedOneWithoutCommentsInputSchema: z.ZodType<Prisma.Use
         .optional(),
       connect: z.lazy(() => UserWhereUniqueInputSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserCreateNestedOneWithoutCommentsInput>;
 
 export const PostUpdateOneRequiredWithoutCommentsNestedInputSchema: z.ZodType<Prisma.PostUpdateOneRequiredWithoutCommentsNestedInput> =
   z
@@ -3493,7 +3493,7 @@ export const PostUpdateOneRequiredWithoutCommentsNestedInputSchema: z.ZodType<Pr
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUpdateOneRequiredWithoutCommentsNestedInput>;
 
 export const UserUpdateOneWithoutCommentsNestedInputSchema: z.ZodType<Prisma.UserUpdateOneWithoutCommentsNestedInput> =
   z
@@ -3523,7 +3523,7 @@ export const UserUpdateOneWithoutCommentsNestedInputSchema: z.ZodType<Prisma.Use
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserUpdateOneWithoutCommentsNestedInput>;
 
 export const NestedStringFilterSchema: z.ZodType<Prisma.NestedStringFilter> = z
   .object({
@@ -3541,7 +3541,7 @@ export const NestedStringFilterSchema: z.ZodType<Prisma.NestedStringFilter> = z
       .union([z.string(), z.lazy(() => NestedStringFilterSchema)])
       .optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.NestedStringFilter>;
 
 export const NestedBoolNullableFilterSchema: z.ZodType<Prisma.NestedBoolNullableFilter> =
   z
@@ -3552,7 +3552,7 @@ export const NestedBoolNullableFilterSchema: z.ZodType<Prisma.NestedBoolNullable
         .optional()
         .nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.NestedBoolNullableFilter>;
 
 export const NestedStringNullableFilterSchema: z.ZodType<Prisma.NestedStringNullableFilter> =
   z
@@ -3572,7 +3572,7 @@ export const NestedStringNullableFilterSchema: z.ZodType<Prisma.NestedStringNull
         .optional()
         .nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.NestedStringNullableFilter>;
 
 export const NestedStringWithAggregatesFilterSchema: z.ZodType<Prisma.NestedStringWithAggregatesFilter> =
   z
@@ -3597,7 +3597,7 @@ export const NestedStringWithAggregatesFilterSchema: z.ZodType<Prisma.NestedStri
       _min: z.lazy(() => NestedStringFilterSchema).optional(),
       _max: z.lazy(() => NestedStringFilterSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.NestedStringWithAggregatesFilter>;
 
 export const NestedIntFilterSchema: z.ZodType<Prisma.NestedIntFilter> = z
   .object({
@@ -3610,7 +3610,7 @@ export const NestedIntFilterSchema: z.ZodType<Prisma.NestedIntFilter> = z
     gte: z.number().optional(),
     not: z.union([z.number(), z.lazy(() => NestedIntFilterSchema)]).optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.NestedIntFilter>;
 
 export const NestedBoolNullableWithAggregatesFilterSchema: z.ZodType<Prisma.NestedBoolNullableWithAggregatesFilter> =
   z
@@ -3627,7 +3627,7 @@ export const NestedBoolNullableWithAggregatesFilterSchema: z.ZodType<Prisma.Nest
       _min: z.lazy(() => NestedBoolNullableFilterSchema).optional(),
       _max: z.lazy(() => NestedBoolNullableFilterSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.NestedBoolNullableWithAggregatesFilter>;
 
 export const NestedIntNullableFilterSchema: z.ZodType<Prisma.NestedIntNullableFilter> =
   z
@@ -3644,7 +3644,7 @@ export const NestedIntNullableFilterSchema: z.ZodType<Prisma.NestedIntNullableFi
         .optional()
         .nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.NestedIntNullableFilter>;
 
 export const NestedStringNullableWithAggregatesFilterSchema: z.ZodType<Prisma.NestedStringNullableWithAggregatesFilter> =
   z
@@ -3670,7 +3670,7 @@ export const NestedStringNullableWithAggregatesFilterSchema: z.ZodType<Prisma.Ne
       _min: z.lazy(() => NestedStringNullableFilterSchema).optional(),
       _max: z.lazy(() => NestedStringNullableFilterSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.NestedStringNullableWithAggregatesFilter>;
 
 export const NestedDateTimeFilterSchema: z.ZodType<Prisma.NestedDateTimeFilter> =
   z
@@ -3686,7 +3686,7 @@ export const NestedDateTimeFilterSchema: z.ZodType<Prisma.NestedDateTimeFilter> 
         .union([z.coerce.date(), z.lazy(() => NestedDateTimeFilterSchema)])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.NestedDateTimeFilter>;
 
 export const NestedDateTimeWithAggregatesFilterSchema: z.ZodType<Prisma.NestedDateTimeWithAggregatesFilter> =
   z
@@ -3708,7 +3708,7 @@ export const NestedDateTimeWithAggregatesFilterSchema: z.ZodType<Prisma.NestedDa
       _min: z.lazy(() => NestedDateTimeFilterSchema).optional(),
       _max: z.lazy(() => NestedDateTimeFilterSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.NestedDateTimeWithAggregatesFilter>;
 
 export const PostCreateWithoutAuthorInputSchema: z.ZodType<Prisma.PostCreateWithoutAuthorInput> =
   z
@@ -3726,7 +3726,7 @@ export const PostCreateWithoutAuthorInputSchema: z.ZodType<Prisma.PostCreateWith
         .lazy(() => CommentCreateNestedManyWithoutPostInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostCreateWithoutAuthorInput>;
 
 export const PostUncheckedCreateWithoutAuthorInputSchema: z.ZodType<Prisma.PostUncheckedCreateWithoutAuthorInput> =
   z
@@ -3744,7 +3744,7 @@ export const PostUncheckedCreateWithoutAuthorInputSchema: z.ZodType<Prisma.PostU
         .lazy(() => CommentUncheckedCreateNestedManyWithoutPostInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUncheckedCreateWithoutAuthorInput>;
 
 export const PostCreateOrConnectWithoutAuthorInputSchema: z.ZodType<Prisma.PostCreateOrConnectWithoutAuthorInput> =
   z
@@ -3755,7 +3755,7 @@ export const PostCreateOrConnectWithoutAuthorInputSchema: z.ZodType<Prisma.PostC
         z.lazy(() => PostUncheckedCreateWithoutAuthorInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostCreateOrConnectWithoutAuthorInput>;
 
 export const PostCreateManyAuthorInputEnvelopeSchema: z.ZodType<Prisma.PostCreateManyAuthorInputEnvelope> =
   z
@@ -3766,7 +3766,7 @@ export const PostCreateManyAuthorInputEnvelopeSchema: z.ZodType<Prisma.PostCreat
       ]),
       skipDuplicates: z.boolean().optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostCreateManyAuthorInputEnvelope>;
 
 export const CommentCreateWithoutUserInputSchema: z.ZodType<Prisma.CommentCreateWithoutUserInput> =
   z
@@ -3775,7 +3775,7 @@ export const CommentCreateWithoutUserInputSchema: z.ZodType<Prisma.CommentCreate
       body: z.string(),
       Post: z.lazy(() => PostCreateNestedOneWithoutCommentsInputSchema),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentCreateWithoutUserInput>;
 
 export const CommentUncheckedCreateWithoutUserInputSchema: z.ZodType<Prisma.CommentUncheckedCreateWithoutUserInput> =
   z
@@ -3784,7 +3784,7 @@ export const CommentUncheckedCreateWithoutUserInputSchema: z.ZodType<Prisma.Comm
       body: z.string(),
       postId: z.string(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUncheckedCreateWithoutUserInput>;
 
 export const CommentCreateOrConnectWithoutUserInputSchema: z.ZodType<Prisma.CommentCreateOrConnectWithoutUserInput> =
   z
@@ -3795,7 +3795,7 @@ export const CommentCreateOrConnectWithoutUserInputSchema: z.ZodType<Prisma.Comm
         z.lazy(() => CommentUncheckedCreateWithoutUserInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentCreateOrConnectWithoutUserInput>;
 
 export const CommentCreateManyUserInputEnvelopeSchema: z.ZodType<Prisma.CommentCreateManyUserInputEnvelope> =
   z
@@ -3806,7 +3806,7 @@ export const CommentCreateManyUserInputEnvelopeSchema: z.ZodType<Prisma.CommentC
       ]),
       skipDuplicates: z.boolean().optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentCreateManyUserInputEnvelope>;
 
 export const PostUpsertWithWhereUniqueWithoutAuthorInputSchema: z.ZodType<Prisma.PostUpsertWithWhereUniqueWithoutAuthorInput> =
   z
@@ -3821,7 +3821,7 @@ export const PostUpsertWithWhereUniqueWithoutAuthorInputSchema: z.ZodType<Prisma
         z.lazy(() => PostUncheckedCreateWithoutAuthorInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUpsertWithWhereUniqueWithoutAuthorInput>;
 
 export const PostUpdateWithWhereUniqueWithoutAuthorInputSchema: z.ZodType<Prisma.PostUpdateWithWhereUniqueWithoutAuthorInput> =
   z
@@ -3832,7 +3832,7 @@ export const PostUpdateWithWhereUniqueWithoutAuthorInputSchema: z.ZodType<Prisma
         z.lazy(() => PostUncheckedUpdateWithoutAuthorInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUpdateWithWhereUniqueWithoutAuthorInput>;
 
 export const PostUpdateManyWithWhereWithoutAuthorInputSchema: z.ZodType<Prisma.PostUpdateManyWithWhereWithoutAuthorInput> =
   z
@@ -3843,7 +3843,7 @@ export const PostUpdateManyWithWhereWithoutAuthorInputSchema: z.ZodType<Prisma.P
         z.lazy(() => PostUncheckedUpdateManyWithoutAuthorInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUpdateManyWithWhereWithoutAuthorInput>;
 
 export const PostScalarWhereInputSchema: z.ZodType<Prisma.PostScalarWhereInput> =
   z
@@ -3880,7 +3880,7 @@ export const PostScalarWhereInputSchema: z.ZodType<Prisma.PostScalarWhereInput> 
         .union([z.lazy(() => StringFilterSchema), z.string()])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostScalarWhereInput>;
 
 export const CommentUpsertWithWhereUniqueWithoutUserInputSchema: z.ZodType<Prisma.CommentUpsertWithWhereUniqueWithoutUserInput> =
   z
@@ -3895,7 +3895,7 @@ export const CommentUpsertWithWhereUniqueWithoutUserInputSchema: z.ZodType<Prism
         z.lazy(() => CommentUncheckedCreateWithoutUserInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUpsertWithWhereUniqueWithoutUserInput>;
 
 export const CommentUpdateWithWhereUniqueWithoutUserInputSchema: z.ZodType<Prisma.CommentUpdateWithWhereUniqueWithoutUserInput> =
   z
@@ -3906,7 +3906,7 @@ export const CommentUpdateWithWhereUniqueWithoutUserInputSchema: z.ZodType<Prism
         z.lazy(() => CommentUncheckedUpdateWithoutUserInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUpdateWithWhereUniqueWithoutUserInput>;
 
 export const CommentUpdateManyWithWhereWithoutUserInputSchema: z.ZodType<Prisma.CommentUpdateManyWithWhereWithoutUserInput> =
   z
@@ -3917,7 +3917,7 @@ export const CommentUpdateManyWithWhereWithoutUserInputSchema: z.ZodType<Prisma.
         z.lazy(() => CommentUncheckedUpdateManyWithoutUserInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUpdateManyWithWhereWithoutUserInput>;
 
 export const CommentScalarWhereInputSchema: z.ZodType<Prisma.CommentScalarWhereInput> =
   z
@@ -3948,7 +3948,7 @@ export const CommentScalarWhereInputSchema: z.ZodType<Prisma.CommentScalarWhereI
         .optional()
         .nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentScalarWhereInput>;
 
 export const PostCreateWithoutCategoriesInputSchema: z.ZodType<Prisma.PostCreateWithoutCategoriesInput> =
   z
@@ -3964,7 +3964,7 @@ export const PostCreateWithoutCategoriesInputSchema: z.ZodType<Prisma.PostCreate
         .lazy(() => CommentCreateNestedManyWithoutPostInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostCreateWithoutCategoriesInput>;
 
 export const PostUncheckedCreateWithoutCategoriesInputSchema: z.ZodType<Prisma.PostUncheckedCreateWithoutCategoriesInput> =
   z
@@ -3980,7 +3980,7 @@ export const PostUncheckedCreateWithoutCategoriesInputSchema: z.ZodType<Prisma.P
         .lazy(() => CommentUncheckedCreateNestedManyWithoutPostInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUncheckedCreateWithoutCategoriesInput>;
 
 export const PostCreateOrConnectWithoutCategoriesInputSchema: z.ZodType<Prisma.PostCreateOrConnectWithoutCategoriesInput> =
   z
@@ -3991,7 +3991,7 @@ export const PostCreateOrConnectWithoutCategoriesInputSchema: z.ZodType<Prisma.P
         z.lazy(() => PostUncheckedCreateWithoutCategoriesInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostCreateOrConnectWithoutCategoriesInput>;
 
 export const PostUpsertWithWhereUniqueWithoutCategoriesInputSchema: z.ZodType<Prisma.PostUpsertWithWhereUniqueWithoutCategoriesInput> =
   z
@@ -4006,7 +4006,7 @@ export const PostUpsertWithWhereUniqueWithoutCategoriesInputSchema: z.ZodType<Pr
         z.lazy(() => PostUncheckedCreateWithoutCategoriesInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUpsertWithWhereUniqueWithoutCategoriesInput>;
 
 export const PostUpdateWithWhereUniqueWithoutCategoriesInputSchema: z.ZodType<Prisma.PostUpdateWithWhereUniqueWithoutCategoriesInput> =
   z
@@ -4017,7 +4017,7 @@ export const PostUpdateWithWhereUniqueWithoutCategoriesInputSchema: z.ZodType<Pr
         z.lazy(() => PostUncheckedUpdateWithoutCategoriesInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUpdateWithWhereUniqueWithoutCategoriesInput>;
 
 export const PostUpdateManyWithWhereWithoutCategoriesInputSchema: z.ZodType<Prisma.PostUpdateManyWithWhereWithoutCategoriesInput> =
   z
@@ -4028,7 +4028,7 @@ export const PostUpdateManyWithWhereWithoutCategoriesInputSchema: z.ZodType<Pris
         z.lazy(() => PostUncheckedUpdateManyWithoutCategoriesInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUpdateManyWithWhereWithoutCategoriesInput>;
 
 export const UserCreateWithoutPostsInputSchema: z.ZodType<Prisma.UserCreateWithoutPostsInput> =
   z
@@ -4048,7 +4048,7 @@ export const UserCreateWithoutPostsInputSchema: z.ZodType<Prisma.UserCreateWitho
         .lazy(() => CommentCreateNestedManyWithoutUserInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserCreateWithoutPostsInput>;
 
 export const UserUncheckedCreateWithoutPostsInputSchema: z.ZodType<Prisma.UserUncheckedCreateWithoutPostsInput> =
   z
@@ -4068,7 +4068,7 @@ export const UserUncheckedCreateWithoutPostsInputSchema: z.ZodType<Prisma.UserUn
         .lazy(() => CommentUncheckedCreateNestedManyWithoutUserInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserUncheckedCreateWithoutPostsInput>;
 
 export const UserCreateOrConnectWithoutPostsInputSchema: z.ZodType<Prisma.UserCreateOrConnectWithoutPostsInput> =
   z
@@ -4079,7 +4079,7 @@ export const UserCreateOrConnectWithoutPostsInputSchema: z.ZodType<Prisma.UserCr
         z.lazy(() => UserUncheckedCreateWithoutPostsInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserCreateOrConnectWithoutPostsInput>;
 
 export const CategoryCreateWithoutPostsInputSchema: z.ZodType<Prisma.CategoryCreateWithoutPostsInput> =
   z
@@ -4087,7 +4087,7 @@ export const CategoryCreateWithoutPostsInputSchema: z.ZodType<Prisma.CategoryCre
       id: z.string().cuid().optional(),
       name: z.string(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryCreateWithoutPostsInput>;
 
 export const CategoryUncheckedCreateWithoutPostsInputSchema: z.ZodType<Prisma.CategoryUncheckedCreateWithoutPostsInput> =
   z
@@ -4095,7 +4095,7 @@ export const CategoryUncheckedCreateWithoutPostsInputSchema: z.ZodType<Prisma.Ca
       id: z.string().cuid().optional(),
       name: z.string(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryUncheckedCreateWithoutPostsInput>;
 
 export const CategoryCreateOrConnectWithoutPostsInputSchema: z.ZodType<Prisma.CategoryCreateOrConnectWithoutPostsInput> =
   z
@@ -4106,7 +4106,7 @@ export const CategoryCreateOrConnectWithoutPostsInputSchema: z.ZodType<Prisma.Ca
         z.lazy(() => CategoryUncheckedCreateWithoutPostsInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryCreateOrConnectWithoutPostsInput>;
 
 export const CommentCreateWithoutPostInputSchema: z.ZodType<Prisma.CommentCreateWithoutPostInput> =
   z
@@ -4117,7 +4117,7 @@ export const CommentCreateWithoutPostInputSchema: z.ZodType<Prisma.CommentCreate
         .lazy(() => UserCreateNestedOneWithoutCommentsInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentCreateWithoutPostInput>;
 
 export const CommentUncheckedCreateWithoutPostInputSchema: z.ZodType<Prisma.CommentUncheckedCreateWithoutPostInput> =
   z
@@ -4126,7 +4126,7 @@ export const CommentUncheckedCreateWithoutPostInputSchema: z.ZodType<Prisma.Comm
       body: z.string(),
       userId: z.string().optional().nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUncheckedCreateWithoutPostInput>;
 
 export const CommentCreateOrConnectWithoutPostInputSchema: z.ZodType<Prisma.CommentCreateOrConnectWithoutPostInput> =
   z
@@ -4137,7 +4137,7 @@ export const CommentCreateOrConnectWithoutPostInputSchema: z.ZodType<Prisma.Comm
         z.lazy(() => CommentUncheckedCreateWithoutPostInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentCreateOrConnectWithoutPostInput>;
 
 export const CommentCreateManyPostInputEnvelopeSchema: z.ZodType<Prisma.CommentCreateManyPostInputEnvelope> =
   z
@@ -4148,7 +4148,7 @@ export const CommentCreateManyPostInputEnvelopeSchema: z.ZodType<Prisma.CommentC
       ]),
       skipDuplicates: z.boolean().optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentCreateManyPostInputEnvelope>;
 
 export const UserUpsertWithoutPostsInputSchema: z.ZodType<Prisma.UserUpsertWithoutPostsInput> =
   z
@@ -4163,7 +4163,7 @@ export const UserUpsertWithoutPostsInputSchema: z.ZodType<Prisma.UserUpsertWitho
       ]),
       where: z.lazy(() => UserWhereInputSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserUpsertWithoutPostsInput>;
 
 export const UserUpdateToOneWithWhereWithoutPostsInputSchema: z.ZodType<Prisma.UserUpdateToOneWithWhereWithoutPostsInput> =
   z
@@ -4174,7 +4174,7 @@ export const UserUpdateToOneWithWhereWithoutPostsInputSchema: z.ZodType<Prisma.U
         z.lazy(() => UserUncheckedUpdateWithoutPostsInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserUpdateToOneWithWhereWithoutPostsInput>;
 
 export const UserUpdateWithoutPostsInputSchema: z.ZodType<Prisma.UserUpdateWithoutPostsInput> =
   z
@@ -4256,7 +4256,7 @@ export const UserUpdateWithoutPostsInputSchema: z.ZodType<Prisma.UserUpdateWitho
         .lazy(() => CommentUpdateManyWithoutUserNestedInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserUpdateWithoutPostsInput>;
 
 export const UserUncheckedUpdateWithoutPostsInputSchema: z.ZodType<Prisma.UserUncheckedUpdateWithoutPostsInput> =
   z
@@ -4338,7 +4338,7 @@ export const UserUncheckedUpdateWithoutPostsInputSchema: z.ZodType<Prisma.UserUn
         .lazy(() => CommentUncheckedUpdateManyWithoutUserNestedInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserUncheckedUpdateWithoutPostsInput>;
 
 export const CategoryUpsertWithWhereUniqueWithoutPostsInputSchema: z.ZodType<Prisma.CategoryUpsertWithWhereUniqueWithoutPostsInput> =
   z
@@ -4353,7 +4353,7 @@ export const CategoryUpsertWithWhereUniqueWithoutPostsInputSchema: z.ZodType<Pri
         z.lazy(() => CategoryUncheckedCreateWithoutPostsInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryUpsertWithWhereUniqueWithoutPostsInput>;
 
 export const CategoryUpdateWithWhereUniqueWithoutPostsInputSchema: z.ZodType<Prisma.CategoryUpdateWithWhereUniqueWithoutPostsInput> =
   z
@@ -4364,7 +4364,7 @@ export const CategoryUpdateWithWhereUniqueWithoutPostsInputSchema: z.ZodType<Pri
         z.lazy(() => CategoryUncheckedUpdateWithoutPostsInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryUpdateWithWhereUniqueWithoutPostsInput>;
 
 export const CategoryUpdateManyWithWhereWithoutPostsInputSchema: z.ZodType<Prisma.CategoryUpdateManyWithWhereWithoutPostsInput> =
   z
@@ -4375,7 +4375,7 @@ export const CategoryUpdateManyWithWhereWithoutPostsInputSchema: z.ZodType<Prism
         z.lazy(() => CategoryUncheckedUpdateManyWithoutPostsInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryUpdateManyWithWhereWithoutPostsInput>;
 
 export const CategoryScalarWhereInputSchema: z.ZodType<Prisma.CategoryScalarWhereInput> =
   z
@@ -4399,7 +4399,7 @@ export const CategoryScalarWhereInputSchema: z.ZodType<Prisma.CategoryScalarWher
       id: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
       name: z.union([z.lazy(() => StringFilterSchema), z.string()]).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryScalarWhereInput>;
 
 export const CommentUpsertWithWhereUniqueWithoutPostInputSchema: z.ZodType<Prisma.CommentUpsertWithWhereUniqueWithoutPostInput> =
   z
@@ -4414,7 +4414,7 @@ export const CommentUpsertWithWhereUniqueWithoutPostInputSchema: z.ZodType<Prism
         z.lazy(() => CommentUncheckedCreateWithoutPostInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUpsertWithWhereUniqueWithoutPostInput>;
 
 export const CommentUpdateWithWhereUniqueWithoutPostInputSchema: z.ZodType<Prisma.CommentUpdateWithWhereUniqueWithoutPostInput> =
   z
@@ -4425,7 +4425,7 @@ export const CommentUpdateWithWhereUniqueWithoutPostInputSchema: z.ZodType<Prism
         z.lazy(() => CommentUncheckedUpdateWithoutPostInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUpdateWithWhereUniqueWithoutPostInput>;
 
 export const CommentUpdateManyWithWhereWithoutPostInputSchema: z.ZodType<Prisma.CommentUpdateManyWithWhereWithoutPostInput> =
   z
@@ -4436,7 +4436,7 @@ export const CommentUpdateManyWithWhereWithoutPostInputSchema: z.ZodType<Prisma.
         z.lazy(() => CommentUncheckedUpdateManyWithoutPostInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUpdateManyWithWhereWithoutPostInput>;
 
 export const PostCreateWithoutCommentsInputSchema: z.ZodType<Prisma.PostCreateWithoutCommentsInput> =
   z
@@ -4452,7 +4452,7 @@ export const PostCreateWithoutCommentsInputSchema: z.ZodType<Prisma.PostCreateWi
         .lazy(() => CategoryCreateNestedManyWithoutPostsInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostCreateWithoutCommentsInput>;
 
 export const PostUncheckedCreateWithoutCommentsInputSchema: z.ZodType<Prisma.PostUncheckedCreateWithoutCommentsInput> =
   z
@@ -4468,7 +4468,7 @@ export const PostUncheckedCreateWithoutCommentsInputSchema: z.ZodType<Prisma.Pos
         .lazy(() => CategoryUncheckedCreateNestedManyWithoutPostsInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUncheckedCreateWithoutCommentsInput>;
 
 export const PostCreateOrConnectWithoutCommentsInputSchema: z.ZodType<Prisma.PostCreateOrConnectWithoutCommentsInput> =
   z
@@ -4479,7 +4479,7 @@ export const PostCreateOrConnectWithoutCommentsInputSchema: z.ZodType<Prisma.Pos
         z.lazy(() => PostUncheckedCreateWithoutCommentsInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostCreateOrConnectWithoutCommentsInput>;
 
 export const UserCreateWithoutCommentsInputSchema: z.ZodType<Prisma.UserCreateWithoutCommentsInput> =
   z
@@ -4499,7 +4499,7 @@ export const UserCreateWithoutCommentsInputSchema: z.ZodType<Prisma.UserCreateWi
         .lazy(() => PostCreateNestedManyWithoutAuthorInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserCreateWithoutCommentsInput>;
 
 export const UserUncheckedCreateWithoutCommentsInputSchema: z.ZodType<Prisma.UserUncheckedCreateWithoutCommentsInput> =
   z
@@ -4519,7 +4519,7 @@ export const UserUncheckedCreateWithoutCommentsInputSchema: z.ZodType<Prisma.Use
         .lazy(() => PostUncheckedCreateNestedManyWithoutAuthorInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserUncheckedCreateWithoutCommentsInput>;
 
 export const UserCreateOrConnectWithoutCommentsInputSchema: z.ZodType<Prisma.UserCreateOrConnectWithoutCommentsInput> =
   z
@@ -4530,7 +4530,7 @@ export const UserCreateOrConnectWithoutCommentsInputSchema: z.ZodType<Prisma.Use
         z.lazy(() => UserUncheckedCreateWithoutCommentsInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserCreateOrConnectWithoutCommentsInput>;
 
 export const PostUpsertWithoutCommentsInputSchema: z.ZodType<Prisma.PostUpsertWithoutCommentsInput> =
   z
@@ -4545,7 +4545,7 @@ export const PostUpsertWithoutCommentsInputSchema: z.ZodType<Prisma.PostUpsertWi
       ]),
       where: z.lazy(() => PostWhereInputSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUpsertWithoutCommentsInput>;
 
 export const PostUpdateToOneWithWhereWithoutCommentsInputSchema: z.ZodType<Prisma.PostUpdateToOneWithWhereWithoutCommentsInput> =
   z
@@ -4556,7 +4556,7 @@ export const PostUpdateToOneWithWhereWithoutCommentsInputSchema: z.ZodType<Prism
         z.lazy(() => PostUncheckedUpdateWithoutCommentsInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUpdateToOneWithWhereWithoutCommentsInput>;
 
 export const PostUpdateWithoutCommentsInputSchema: z.ZodType<Prisma.PostUpdateWithoutCommentsInput> =
   z
@@ -4604,7 +4604,7 @@ export const PostUpdateWithoutCommentsInputSchema: z.ZodType<Prisma.PostUpdateWi
         .lazy(() => CategoryUpdateManyWithoutPostsNestedInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUpdateWithoutCommentsInput>;
 
 export const PostUncheckedUpdateWithoutCommentsInputSchema: z.ZodType<Prisma.PostUncheckedUpdateWithoutCommentsInput> =
   z
@@ -4655,7 +4655,7 @@ export const PostUncheckedUpdateWithoutCommentsInputSchema: z.ZodType<Prisma.Pos
         .lazy(() => CategoryUncheckedUpdateManyWithoutPostsNestedInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUncheckedUpdateWithoutCommentsInput>;
 
 export const UserUpsertWithoutCommentsInputSchema: z.ZodType<Prisma.UserUpsertWithoutCommentsInput> =
   z
@@ -4670,7 +4670,7 @@ export const UserUpsertWithoutCommentsInputSchema: z.ZodType<Prisma.UserUpsertWi
       ]),
       where: z.lazy(() => UserWhereInputSchema).optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserUpsertWithoutCommentsInput>;
 
 export const UserUpdateToOneWithWhereWithoutCommentsInputSchema: z.ZodType<Prisma.UserUpdateToOneWithWhereWithoutCommentsInput> =
   z
@@ -4681,7 +4681,7 @@ export const UserUpdateToOneWithWhereWithoutCommentsInputSchema: z.ZodType<Prism
         z.lazy(() => UserUncheckedUpdateWithoutCommentsInputSchema),
       ]),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserUpdateToOneWithWhereWithoutCommentsInput>;
 
 export const UserUpdateWithoutCommentsInputSchema: z.ZodType<Prisma.UserUpdateWithoutCommentsInput> =
   z
@@ -4763,7 +4763,7 @@ export const UserUpdateWithoutCommentsInputSchema: z.ZodType<Prisma.UserUpdateWi
         .lazy(() => PostUpdateManyWithoutAuthorNestedInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserUpdateWithoutCommentsInput>;
 
 export const UserUncheckedUpdateWithoutCommentsInputSchema: z.ZodType<Prisma.UserUncheckedUpdateWithoutCommentsInput> =
   z
@@ -4845,7 +4845,7 @@ export const UserUncheckedUpdateWithoutCommentsInputSchema: z.ZodType<Prisma.Use
         .lazy(() => PostUncheckedUpdateManyWithoutAuthorNestedInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserUncheckedUpdateWithoutCommentsInput>;
 
 export const PostCreateManyAuthorInputSchema: z.ZodType<Prisma.PostCreateManyAuthorInput> =
   z
@@ -4857,7 +4857,7 @@ export const PostCreateManyAuthorInputSchema: z.ZodType<Prisma.PostCreateManyAut
       date: z.coerce.date().optional(),
       header: z.string(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostCreateManyAuthorInput>;
 
 export const CommentCreateManyUserInputSchema: z.ZodType<Prisma.CommentCreateManyUserInput> =
   z
@@ -4866,7 +4866,7 @@ export const CommentCreateManyUserInputSchema: z.ZodType<Prisma.CommentCreateMan
       body: z.string(),
       postId: z.string(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentCreateManyUserInput>;
 
 export const PostUpdateWithoutAuthorInputSchema: z.ZodType<Prisma.PostUpdateWithoutAuthorInput> =
   z
@@ -4914,7 +4914,7 @@ export const PostUpdateWithoutAuthorInputSchema: z.ZodType<Prisma.PostUpdateWith
         .lazy(() => CommentUpdateManyWithoutPostNestedInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUpdateWithoutAuthorInput>;
 
 export const PostUncheckedUpdateWithoutAuthorInputSchema: z.ZodType<Prisma.PostUncheckedUpdateWithoutAuthorInput> =
   z
@@ -4962,7 +4962,7 @@ export const PostUncheckedUpdateWithoutAuthorInputSchema: z.ZodType<Prisma.PostU
         .lazy(() => CommentUncheckedUpdateManyWithoutPostNestedInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUncheckedUpdateWithoutAuthorInput>;
 
 export const PostUncheckedUpdateManyWithoutAuthorInputSchema: z.ZodType<Prisma.PostUncheckedUpdateManyWithoutAuthorInput> =
   z
@@ -5004,7 +5004,7 @@ export const PostUncheckedUpdateManyWithoutAuthorInputSchema: z.ZodType<Prisma.P
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUncheckedUpdateManyWithoutAuthorInput>;
 
 export const CommentUpdateWithoutUserInputSchema: z.ZodType<Prisma.CommentUpdateWithoutUserInput> =
   z
@@ -5025,7 +5025,7 @@ export const CommentUpdateWithoutUserInputSchema: z.ZodType<Prisma.CommentUpdate
         .lazy(() => PostUpdateOneRequiredWithoutCommentsNestedInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUpdateWithoutUserInput>;
 
 export const CommentUncheckedUpdateWithoutUserInputSchema: z.ZodType<Prisma.CommentUncheckedUpdateWithoutUserInput> =
   z
@@ -5049,7 +5049,7 @@ export const CommentUncheckedUpdateWithoutUserInputSchema: z.ZodType<Prisma.Comm
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUncheckedUpdateWithoutUserInput>;
 
 export const CommentUncheckedUpdateManyWithoutUserInputSchema: z.ZodType<Prisma.CommentUncheckedUpdateManyWithoutUserInput> =
   z
@@ -5073,7 +5073,7 @@ export const CommentUncheckedUpdateManyWithoutUserInputSchema: z.ZodType<Prisma.
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUncheckedUpdateManyWithoutUserInput>;
 
 export const PostUpdateWithoutCategoriesInputSchema: z.ZodType<Prisma.PostUpdateWithoutCategoriesInput> =
   z
@@ -5121,7 +5121,7 @@ export const PostUpdateWithoutCategoriesInputSchema: z.ZodType<Prisma.PostUpdate
         .lazy(() => CommentUpdateManyWithoutPostNestedInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUpdateWithoutCategoriesInput>;
 
 export const PostUncheckedUpdateWithoutCategoriesInputSchema: z.ZodType<Prisma.PostUncheckedUpdateWithoutCategoriesInput> =
   z
@@ -5172,7 +5172,7 @@ export const PostUncheckedUpdateWithoutCategoriesInputSchema: z.ZodType<Prisma.P
         .lazy(() => CommentUncheckedUpdateManyWithoutPostNestedInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUncheckedUpdateWithoutCategoriesInput>;
 
 export const PostUncheckedUpdateManyWithoutCategoriesInputSchema: z.ZodType<Prisma.PostUncheckedUpdateManyWithoutCategoriesInput> =
   z
@@ -5220,7 +5220,7 @@ export const PostUncheckedUpdateManyWithoutCategoriesInputSchema: z.ZodType<Pris
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostUncheckedUpdateManyWithoutCategoriesInput>;
 
 export const CommentCreateManyPostInputSchema: z.ZodType<Prisma.CommentCreateManyPostInput> =
   z
@@ -5229,7 +5229,7 @@ export const CommentCreateManyPostInputSchema: z.ZodType<Prisma.CommentCreateMan
       body: z.string(),
       userId: z.string().optional().nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentCreateManyPostInput>;
 
 export const CategoryUpdateWithoutPostsInputSchema: z.ZodType<Prisma.CategoryUpdateWithoutPostsInput> =
   z
@@ -5247,7 +5247,7 @@ export const CategoryUpdateWithoutPostsInputSchema: z.ZodType<Prisma.CategoryUpd
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryUpdateWithoutPostsInput>;
 
 export const CategoryUncheckedUpdateWithoutPostsInputSchema: z.ZodType<Prisma.CategoryUncheckedUpdateWithoutPostsInput> =
   z
@@ -5265,7 +5265,7 @@ export const CategoryUncheckedUpdateWithoutPostsInputSchema: z.ZodType<Prisma.Ca
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryUncheckedUpdateWithoutPostsInput>;
 
 export const CategoryUncheckedUpdateManyWithoutPostsInputSchema: z.ZodType<Prisma.CategoryUncheckedUpdateManyWithoutPostsInput> =
   z
@@ -5283,7 +5283,7 @@ export const CategoryUncheckedUpdateManyWithoutPostsInputSchema: z.ZodType<Prism
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryUncheckedUpdateManyWithoutPostsInput>;
 
 export const CommentUpdateWithoutPostInputSchema: z.ZodType<Prisma.CommentUpdateWithoutPostInput> =
   z
@@ -5304,7 +5304,7 @@ export const CommentUpdateWithoutPostInputSchema: z.ZodType<Prisma.CommentUpdate
         .lazy(() => UserUpdateOneWithoutCommentsNestedInputSchema)
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUpdateWithoutPostInput>;
 
 export const CommentUncheckedUpdateWithoutPostInputSchema: z.ZodType<Prisma.CommentUncheckedUpdateWithoutPostInput> =
   z
@@ -5329,7 +5329,7 @@ export const CommentUncheckedUpdateWithoutPostInputSchema: z.ZodType<Prisma.Comm
         .optional()
         .nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUncheckedUpdateWithoutPostInput>;
 
 export const CommentUncheckedUpdateManyWithoutPostInputSchema: z.ZodType<Prisma.CommentUncheckedUpdateManyWithoutPostInput> =
   z
@@ -5354,7 +5354,7 @@ export const CommentUncheckedUpdateManyWithoutPostInputSchema: z.ZodType<Prisma.
         .optional()
         .nullable(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUncheckedUpdateManyWithoutPostInput>;
 
 /////////////////////////////////////////
 // ARGS
@@ -5378,7 +5378,7 @@ export const UserFindFirstArgsSchema: z.ZodType<Prisma.UserFindFirstArgs> = z
       .union([UserScalarFieldEnumSchema, UserScalarFieldEnumSchema.array()])
       .optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.UserFindFirstArgs>;
 
 export const UserFindFirstOrThrowArgsSchema: z.ZodType<Prisma.UserFindFirstOrThrowArgs> =
   z
@@ -5399,7 +5399,7 @@ export const UserFindFirstOrThrowArgsSchema: z.ZodType<Prisma.UserFindFirstOrThr
         .union([UserScalarFieldEnumSchema, UserScalarFieldEnumSchema.array()])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserFindFirstOrThrowArgs>;
 
 export const UserFindManyArgsSchema: z.ZodType<Prisma.UserFindManyArgs> = z
   .object({
@@ -5419,7 +5419,7 @@ export const UserFindManyArgsSchema: z.ZodType<Prisma.UserFindManyArgs> = z
       .union([UserScalarFieldEnumSchema, UserScalarFieldEnumSchema.array()])
       .optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.UserFindManyArgs>;
 
 export const UserAggregateArgsSchema: z.ZodType<Prisma.UserAggregateArgs> = z
   .object({
@@ -5434,7 +5434,7 @@ export const UserAggregateArgsSchema: z.ZodType<Prisma.UserAggregateArgs> = z
     take: z.number().optional(),
     skip: z.number().optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.UserAggregateArgs>;
 
 export const UserGroupByArgsSchema: z.ZodType<Prisma.UserGroupByArgs> = z
   .object({
@@ -5450,7 +5450,7 @@ export const UserGroupByArgsSchema: z.ZodType<Prisma.UserGroupByArgs> = z
     take: z.number().optional(),
     skip: z.number().optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.UserGroupByArgs>;
 
 export const UserFindUniqueArgsSchema: z.ZodType<Prisma.UserFindUniqueArgs> = z
   .object({
@@ -5458,7 +5458,7 @@ export const UserFindUniqueArgsSchema: z.ZodType<Prisma.UserFindUniqueArgs> = z
     include: UserIncludeSchema.optional(),
     where: UserWhereUniqueInputSchema,
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.UserFindUniqueArgs>;
 
 export const UserFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.UserFindUniqueOrThrowArgs> =
   z
@@ -5467,7 +5467,7 @@ export const UserFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.UserFindUniqueOrT
       include: UserIncludeSchema.optional(),
       where: UserWhereUniqueInputSchema,
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.UserFindUniqueOrThrowArgs>;
 
 export const CategoryFindFirstArgsSchema: z.ZodType<Prisma.CategoryFindFirstArgs> =
   z
@@ -5491,7 +5491,7 @@ export const CategoryFindFirstArgsSchema: z.ZodType<Prisma.CategoryFindFirstArgs
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryFindFirstArgs>;
 
 export const CategoryFindFirstOrThrowArgsSchema: z.ZodType<Prisma.CategoryFindFirstOrThrowArgs> =
   z
@@ -5515,7 +5515,7 @@ export const CategoryFindFirstOrThrowArgsSchema: z.ZodType<Prisma.CategoryFindFi
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryFindFirstOrThrowArgs>;
 
 export const CategoryFindManyArgsSchema: z.ZodType<Prisma.CategoryFindManyArgs> =
   z
@@ -5539,7 +5539,7 @@ export const CategoryFindManyArgsSchema: z.ZodType<Prisma.CategoryFindManyArgs> 
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryFindManyArgs>;
 
 export const CategoryAggregateArgsSchema: z.ZodType<Prisma.CategoryAggregateArgs> =
   z
@@ -5555,7 +5555,7 @@ export const CategoryAggregateArgsSchema: z.ZodType<Prisma.CategoryAggregateArgs
       take: z.number().optional(),
       skip: z.number().optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryAggregateArgs>;
 
 export const CategoryGroupByArgsSchema: z.ZodType<Prisma.CategoryGroupByArgs> =
   z
@@ -5572,7 +5572,7 @@ export const CategoryGroupByArgsSchema: z.ZodType<Prisma.CategoryGroupByArgs> =
       take: z.number().optional(),
       skip: z.number().optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryGroupByArgs>;
 
 export const CategoryFindUniqueArgsSchema: z.ZodType<Prisma.CategoryFindUniqueArgs> =
   z
@@ -5581,7 +5581,7 @@ export const CategoryFindUniqueArgsSchema: z.ZodType<Prisma.CategoryFindUniqueAr
       include: CategoryIncludeSchema.optional(),
       where: CategoryWhereUniqueInputSchema,
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryFindUniqueArgs>;
 
 export const CategoryFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.CategoryFindUniqueOrThrowArgs> =
   z
@@ -5590,7 +5590,7 @@ export const CategoryFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.CategoryFindU
       include: CategoryIncludeSchema.optional(),
       where: CategoryWhereUniqueInputSchema,
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryFindUniqueOrThrowArgs>;
 
 export const PostFindFirstArgsSchema: z.ZodType<Prisma.PostFindFirstArgs> = z
   .object({
@@ -5610,7 +5610,7 @@ export const PostFindFirstArgsSchema: z.ZodType<Prisma.PostFindFirstArgs> = z
       .union([PostScalarFieldEnumSchema, PostScalarFieldEnumSchema.array()])
       .optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.PostFindFirstArgs>;
 
 export const PostFindFirstOrThrowArgsSchema: z.ZodType<Prisma.PostFindFirstOrThrowArgs> =
   z
@@ -5631,7 +5631,7 @@ export const PostFindFirstOrThrowArgsSchema: z.ZodType<Prisma.PostFindFirstOrThr
         .union([PostScalarFieldEnumSchema, PostScalarFieldEnumSchema.array()])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostFindFirstOrThrowArgs>;
 
 export const PostFindManyArgsSchema: z.ZodType<Prisma.PostFindManyArgs> = z
   .object({
@@ -5651,7 +5651,7 @@ export const PostFindManyArgsSchema: z.ZodType<Prisma.PostFindManyArgs> = z
       .union([PostScalarFieldEnumSchema, PostScalarFieldEnumSchema.array()])
       .optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.PostFindManyArgs>;
 
 export const PostAggregateArgsSchema: z.ZodType<Prisma.PostAggregateArgs> = z
   .object({
@@ -5666,7 +5666,7 @@ export const PostAggregateArgsSchema: z.ZodType<Prisma.PostAggregateArgs> = z
     take: z.number().optional(),
     skip: z.number().optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.PostAggregateArgs>;
 
 export const PostGroupByArgsSchema: z.ZodType<Prisma.PostGroupByArgs> = z
   .object({
@@ -5682,7 +5682,7 @@ export const PostGroupByArgsSchema: z.ZodType<Prisma.PostGroupByArgs> = z
     take: z.number().optional(),
     skip: z.number().optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.PostGroupByArgs>;
 
 export const PostFindUniqueArgsSchema: z.ZodType<Prisma.PostFindUniqueArgs> = z
   .object({
@@ -5690,7 +5690,7 @@ export const PostFindUniqueArgsSchema: z.ZodType<Prisma.PostFindUniqueArgs> = z
     include: PostIncludeSchema.optional(),
     where: PostWhereUniqueInputSchema,
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.PostFindUniqueArgs>;
 
 export const PostFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.PostFindUniqueOrThrowArgs> =
   z
@@ -5699,7 +5699,7 @@ export const PostFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.PostFindUniqueOrT
       include: PostIncludeSchema.optional(),
       where: PostWhereUniqueInputSchema,
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.PostFindUniqueOrThrowArgs>;
 
 export const CommentFindFirstArgsSchema: z.ZodType<Prisma.CommentFindFirstArgs> =
   z
@@ -5723,7 +5723,7 @@ export const CommentFindFirstArgsSchema: z.ZodType<Prisma.CommentFindFirstArgs> 
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentFindFirstArgs>;
 
 export const CommentFindFirstOrThrowArgsSchema: z.ZodType<Prisma.CommentFindFirstOrThrowArgs> =
   z
@@ -5747,7 +5747,7 @@ export const CommentFindFirstOrThrowArgsSchema: z.ZodType<Prisma.CommentFindFirs
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentFindFirstOrThrowArgs>;
 
 export const CommentFindManyArgsSchema: z.ZodType<Prisma.CommentFindManyArgs> =
   z
@@ -5771,7 +5771,7 @@ export const CommentFindManyArgsSchema: z.ZodType<Prisma.CommentFindManyArgs> =
         ])
         .optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentFindManyArgs>;
 
 export const CommentAggregateArgsSchema: z.ZodType<Prisma.CommentAggregateArgs> =
   z
@@ -5787,7 +5787,7 @@ export const CommentAggregateArgsSchema: z.ZodType<Prisma.CommentAggregateArgs> 
       take: z.number().optional(),
       skip: z.number().optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentAggregateArgs>;
 
 export const CommentGroupByArgsSchema: z.ZodType<Prisma.CommentGroupByArgs> = z
   .object({
@@ -5803,7 +5803,7 @@ export const CommentGroupByArgsSchema: z.ZodType<Prisma.CommentGroupByArgs> = z
     take: z.number().optional(),
     skip: z.number().optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.CommentGroupByArgs>;
 
 export const CommentFindUniqueArgsSchema: z.ZodType<Prisma.CommentFindUniqueArgs> =
   z
@@ -5812,7 +5812,7 @@ export const CommentFindUniqueArgsSchema: z.ZodType<Prisma.CommentFindUniqueArgs
       include: CommentIncludeSchema.optional(),
       where: CommentWhereUniqueInputSchema,
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentFindUniqueArgs>;
 
 export const CommentFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.CommentFindUniqueOrThrowArgs> =
   z
@@ -5821,7 +5821,7 @@ export const CommentFindUniqueOrThrowArgsSchema: z.ZodType<Prisma.CommentFindUni
       include: CommentIncludeSchema.optional(),
       where: CommentWhereUniqueInputSchema,
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentFindUniqueOrThrowArgs>;
 
 export const UserCreateArgsSchema: z.ZodType<Prisma.UserCreateArgs> = z
   .object({
@@ -5829,7 +5829,7 @@ export const UserCreateArgsSchema: z.ZodType<Prisma.UserCreateArgs> = z
     include: UserIncludeSchema.optional(),
     data: z.union([UserCreateInputSchema, UserUncheckedCreateInputSchema]),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.UserCreateArgs>;
 
 export const UserUpsertArgsSchema: z.ZodType<Prisma.UserUpsertArgs> = z
   .object({
@@ -5839,7 +5839,7 @@ export const UserUpsertArgsSchema: z.ZodType<Prisma.UserUpsertArgs> = z
     create: z.union([UserCreateInputSchema, UserUncheckedCreateInputSchema]),
     update: z.union([UserUpdateInputSchema, UserUncheckedUpdateInputSchema]),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.UserUpsertArgs>;
 
 export const UserCreateManyArgsSchema: z.ZodType<Prisma.UserCreateManyArgs> = z
   .object({
@@ -5849,7 +5849,7 @@ export const UserCreateManyArgsSchema: z.ZodType<Prisma.UserCreateManyArgs> = z
     ]),
     skipDuplicates: z.boolean().optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.UserCreateManyArgs>;
 
 export const UserDeleteArgsSchema: z.ZodType<Prisma.UserDeleteArgs> = z
   .object({
@@ -5857,7 +5857,7 @@ export const UserDeleteArgsSchema: z.ZodType<Prisma.UserDeleteArgs> = z
     include: UserIncludeSchema.optional(),
     where: UserWhereUniqueInputSchema,
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.UserDeleteArgs>;
 
 export const UserUpdateArgsSchema: z.ZodType<Prisma.UserUpdateArgs> = z
   .object({
@@ -5866,7 +5866,7 @@ export const UserUpdateArgsSchema: z.ZodType<Prisma.UserUpdateArgs> = z
     data: z.union([UserUpdateInputSchema, UserUncheckedUpdateInputSchema]),
     where: UserWhereUniqueInputSchema,
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.UserUpdateArgs>;
 
 export const UserUpdateManyArgsSchema: z.ZodType<Prisma.UserUpdateManyArgs> = z
   .object({
@@ -5876,13 +5876,13 @@ export const UserUpdateManyArgsSchema: z.ZodType<Prisma.UserUpdateManyArgs> = z
     ]),
     where: UserWhereInputSchema.optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.UserUpdateManyArgs>;
 
 export const UserDeleteManyArgsSchema: z.ZodType<Prisma.UserDeleteManyArgs> = z
   .object({
     where: UserWhereInputSchema.optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.UserDeleteManyArgs>;
 
 export const CategoryCreateArgsSchema: z.ZodType<Prisma.CategoryCreateArgs> = z
   .object({
@@ -5893,7 +5893,7 @@ export const CategoryCreateArgsSchema: z.ZodType<Prisma.CategoryCreateArgs> = z
       CategoryUncheckedCreateInputSchema,
     ]),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.CategoryCreateArgs>;
 
 export const CategoryUpsertArgsSchema: z.ZodType<Prisma.CategoryUpsertArgs> = z
   .object({
@@ -5909,7 +5909,7 @@ export const CategoryUpsertArgsSchema: z.ZodType<Prisma.CategoryUpsertArgs> = z
       CategoryUncheckedUpdateInputSchema,
     ]),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.CategoryUpsertArgs>;
 
 export const CategoryCreateManyArgsSchema: z.ZodType<Prisma.CategoryCreateManyArgs> =
   z
@@ -5920,7 +5920,7 @@ export const CategoryCreateManyArgsSchema: z.ZodType<Prisma.CategoryCreateManyAr
       ]),
       skipDuplicates: z.boolean().optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryCreateManyArgs>;
 
 export const CategoryDeleteArgsSchema: z.ZodType<Prisma.CategoryDeleteArgs> = z
   .object({
@@ -5928,7 +5928,7 @@ export const CategoryDeleteArgsSchema: z.ZodType<Prisma.CategoryDeleteArgs> = z
     include: CategoryIncludeSchema.optional(),
     where: CategoryWhereUniqueInputSchema,
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.CategoryDeleteArgs>;
 
 export const CategoryUpdateArgsSchema: z.ZodType<Prisma.CategoryUpdateArgs> = z
   .object({
@@ -5940,7 +5940,7 @@ export const CategoryUpdateArgsSchema: z.ZodType<Prisma.CategoryUpdateArgs> = z
     ]),
     where: CategoryWhereUniqueInputSchema,
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.CategoryUpdateArgs>;
 
 export const CategoryUpdateManyArgsSchema: z.ZodType<Prisma.CategoryUpdateManyArgs> =
   z
@@ -5951,14 +5951,14 @@ export const CategoryUpdateManyArgsSchema: z.ZodType<Prisma.CategoryUpdateManyAr
       ]),
       where: CategoryWhereInputSchema.optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryUpdateManyArgs>;
 
 export const CategoryDeleteManyArgsSchema: z.ZodType<Prisma.CategoryDeleteManyArgs> =
   z
     .object({
       where: CategoryWhereInputSchema.optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CategoryDeleteManyArgs>;
 
 export const PostCreateArgsSchema: z.ZodType<Prisma.PostCreateArgs> = z
   .object({
@@ -5966,7 +5966,7 @@ export const PostCreateArgsSchema: z.ZodType<Prisma.PostCreateArgs> = z
     include: PostIncludeSchema.optional(),
     data: z.union([PostCreateInputSchema, PostUncheckedCreateInputSchema]),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.PostCreateArgs>;
 
 export const PostUpsertArgsSchema: z.ZodType<Prisma.PostUpsertArgs> = z
   .object({
@@ -5976,7 +5976,7 @@ export const PostUpsertArgsSchema: z.ZodType<Prisma.PostUpsertArgs> = z
     create: z.union([PostCreateInputSchema, PostUncheckedCreateInputSchema]),
     update: z.union([PostUpdateInputSchema, PostUncheckedUpdateInputSchema]),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.PostUpsertArgs>;
 
 export const PostCreateManyArgsSchema: z.ZodType<Prisma.PostCreateManyArgs> = z
   .object({
@@ -5986,7 +5986,7 @@ export const PostCreateManyArgsSchema: z.ZodType<Prisma.PostCreateManyArgs> = z
     ]),
     skipDuplicates: z.boolean().optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.PostCreateManyArgs>;
 
 export const PostDeleteArgsSchema: z.ZodType<Prisma.PostDeleteArgs> = z
   .object({
@@ -5994,7 +5994,7 @@ export const PostDeleteArgsSchema: z.ZodType<Prisma.PostDeleteArgs> = z
     include: PostIncludeSchema.optional(),
     where: PostWhereUniqueInputSchema,
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.PostDeleteArgs>;
 
 export const PostUpdateArgsSchema: z.ZodType<Prisma.PostUpdateArgs> = z
   .object({
@@ -6003,7 +6003,7 @@ export const PostUpdateArgsSchema: z.ZodType<Prisma.PostUpdateArgs> = z
     data: z.union([PostUpdateInputSchema, PostUncheckedUpdateInputSchema]),
     where: PostWhereUniqueInputSchema,
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.PostUpdateArgs>;
 
 export const PostUpdateManyArgsSchema: z.ZodType<Prisma.PostUpdateManyArgs> = z
   .object({
@@ -6013,13 +6013,13 @@ export const PostUpdateManyArgsSchema: z.ZodType<Prisma.PostUpdateManyArgs> = z
     ]),
     where: PostWhereInputSchema.optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.PostUpdateManyArgs>;
 
 export const PostDeleteManyArgsSchema: z.ZodType<Prisma.PostDeleteManyArgs> = z
   .object({
     where: PostWhereInputSchema.optional(),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.PostDeleteManyArgs>;
 
 export const CommentCreateArgsSchema: z.ZodType<Prisma.CommentCreateArgs> = z
   .object({
@@ -6030,7 +6030,7 @@ export const CommentCreateArgsSchema: z.ZodType<Prisma.CommentCreateArgs> = z
       CommentUncheckedCreateInputSchema,
     ]),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.CommentCreateArgs>;
 
 export const CommentUpsertArgsSchema: z.ZodType<Prisma.CommentUpsertArgs> = z
   .object({
@@ -6046,7 +6046,7 @@ export const CommentUpsertArgsSchema: z.ZodType<Prisma.CommentUpsertArgs> = z
       CommentUncheckedUpdateInputSchema,
     ]),
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.CommentUpsertArgs>;
 
 export const CommentCreateManyArgsSchema: z.ZodType<Prisma.CommentCreateManyArgs> =
   z
@@ -6057,7 +6057,7 @@ export const CommentCreateManyArgsSchema: z.ZodType<Prisma.CommentCreateManyArgs
       ]),
       skipDuplicates: z.boolean().optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentCreateManyArgs>;
 
 export const CommentDeleteArgsSchema: z.ZodType<Prisma.CommentDeleteArgs> = z
   .object({
@@ -6065,7 +6065,7 @@ export const CommentDeleteArgsSchema: z.ZodType<Prisma.CommentDeleteArgs> = z
     include: CommentIncludeSchema.optional(),
     where: CommentWhereUniqueInputSchema,
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.CommentDeleteArgs>;
 
 export const CommentUpdateArgsSchema: z.ZodType<Prisma.CommentUpdateArgs> = z
   .object({
@@ -6077,7 +6077,7 @@ export const CommentUpdateArgsSchema: z.ZodType<Prisma.CommentUpdateArgs> = z
     ]),
     where: CommentWhereUniqueInputSchema,
   })
-  .strict();
+  .strict() as z.ZodType<Prisma.CommentUpdateArgs>;
 
 export const CommentUpdateManyArgsSchema: z.ZodType<Prisma.CommentUpdateManyArgs> =
   z
@@ -6088,11 +6088,11 @@ export const CommentUpdateManyArgsSchema: z.ZodType<Prisma.CommentUpdateManyArgs
       ]),
       where: CommentWhereInputSchema.optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentUpdateManyArgs>;
 
 export const CommentDeleteManyArgsSchema: z.ZodType<Prisma.CommentDeleteManyArgs> =
   z
     .object({
       where: CommentWhereInputSchema.optional(),
     })
-    .strict();
+    .strict() as z.ZodType<Prisma.CommentDeleteManyArgs>;
