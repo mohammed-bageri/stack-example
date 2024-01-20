@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator zod {
+  provider = "zod-prisma-types"
+  output   = "../shared/src/types/zod"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String    @id @default(cuid())
+  email     String    @unique
+  password  String
+  name      String
+  isAdmin   Boolean?  @default(false)
+  image     String?
+  about     String?
+  facebook  String?
+  instagram String?
+  linkedin  String?
+  verified  Boolean?  @default(false)
+  Posts     Post[]
+  Comments  Comment[]
+}
+
+model Category {
+  id    String @id @default(cuid())
+  name  String
+  Posts Post[]
+}
+
+model Post {
+  id          String     @id @default(cuid())
+  title       String
+  description String
+  body        String
+  date        DateTime   @default(now())
+  header      String
+  Author      User       @relation(fields: [authorId], references: [id])
+  authorId    String
+  Categories  Category[]
+  Comments    Comment[]
+}
+
+model Comment {
+  id     String  @id @default(cuid())
+  body   String
+  Post   Post    @relation(fields: [postId], references: [id])
+  postId String
+  User   User?   @relation(fields: [userId], references: [id])
+  userId String?
+}
