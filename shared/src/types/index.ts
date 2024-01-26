@@ -21,9 +21,7 @@ export const SignInInputSchema = z.object({
   password: z.string(),
 });
 
-export const SignOutInputSchema = z.object({
-  token: z.string(),
-});
+export const SignOutInputSchema = z.null();
 
 export const VerifyEmailInputSchema = z.object({
   email: z.string().email(),
@@ -35,6 +33,7 @@ export const ForgetPasswordInputSchema = z.object({
 });
 
 export const ResetPasswordInputSchema = z.object({
+  password: z.string(),
   email: z.string().email(),
   token: z.string(),
 });
@@ -43,7 +42,7 @@ export type SignUpInput = z.infer<typeof SignUpInputSchema>;
 export type SignInInput = z.infer<typeof SignInInputSchema>;
 export type SignOutInput = z.infer<typeof SignOutInputSchema>;
 
-export type VerifyEmailInput = z.infer<typeof SignUpInputSchema>;
+export type VerifyEmailInput = z.infer<typeof VerifyEmailInputSchema>;
 export type ForgetPasswordInput = z.infer<typeof ForgetPasswordInputSchema>;
 export type ResetPasswordInput = z.infer<typeof ResetPasswordInputSchema>;
 

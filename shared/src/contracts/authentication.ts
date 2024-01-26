@@ -4,12 +4,7 @@ import {
   ResponseStatus,
   c,
 } from '../helpers';
-import {
-  SignInInputSchema,
-  SignOutInputSchema,
-  SignUpInputSchema,
-  UserSchema,
-} from '../types';
+import { SignInInputSchema, SignUpInputSchema, UserSchema } from '../types';
 
 export const authenticationContract = c.router({
   signUp: {
@@ -41,18 +36,18 @@ export const authenticationContract = c.router({
     summary: 'Sign In',
   },
   signOut: {
-    method: 'POST',
+    method: 'GET',
     path: '/authentication/sign-out',
     responses: {
       200: ResponseSchemaGenerator(z.null(), ResponseStatus.Success),
       401: ResponseSchemaGenerator(z.null(), ResponseStatus.Fail),
       500: ResponseSchemaGenerator(z.null(), ResponseStatus.Error),
     },
-    body: SignOutInputSchema,
+    // body: SignOutInputSchema,
     headers: z.object({
       authorization: z.string(),
     }),
-    summary: 'Sign In',
+    summary: 'Sign Out',
   },
   profile: {
     method: 'GET',

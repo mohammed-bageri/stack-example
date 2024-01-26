@@ -14,19 +14,40 @@ datasource db {
 }
 
 model User {
-  id        String    @id @default(cuid())
-  email     String    @unique
-  password  String
-  name      String
-  isAdmin   Boolean?  @default(false)
-  image     String?
-  about     String?
-  facebook  String?
-  instagram String?
-  linkedin  String?
-  verified  Boolean?  @default(false)
-  Posts     Post[]
-  Comments  Comment[]
+  id            String       @id @default(cuid())
+  email         String       @unique
+  password      String
+  name          String
+  token         String?
+  verified      Boolean?     @default(false)
+  passwordToken String?
+  image         String?
+  about         String?
+  facebook      String?
+  instagram     String?
+  linkedin      String?
+  permissions   Permission[]
+  Posts         Post[]
+  Comments      Comment[]
+}
+
+enum Permission {
+  CREATE_USER
+  UPDATE_USER
+  DELETE_USER
+  READ_USER
+  CREATE_CATEGORY
+  UPDATE_CATEGORY
+  DELETE_CATEGORY
+  READ_CATEGORY
+  CREATE_POST
+  UPDATE_POST
+  DELETE_POST
+  READ_POST
+  CREATE_COMMENT
+  UPDATE_COMMENT
+  DELETE_COMMENT
+  READ_COMMENT
 }
 
 model Category {

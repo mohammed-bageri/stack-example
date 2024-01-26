@@ -12,6 +12,7 @@ export const verificationContract = c.router({
     path: '/verification/verify-email',
     responses: {
       200: ResponseSchemaGenerator(z.null(), ResponseStatus.Success),
+      404: ResponseSchemaGenerator(z.null(), ResponseStatus.Fail),
       500: ResponseSchemaGenerator(z.null(), ResponseStatus.Error),
     },
     body: VerifyEmailInputSchema,
@@ -22,6 +23,7 @@ export const verificationContract = c.router({
     path: '/verification/forgot-password',
     responses: {
       200: ResponseSchemaGenerator(z.null(), ResponseStatus.Success),
+      404: ResponseSchemaGenerator(z.null(), ResponseStatus.Fail),
       500: ResponseSchemaGenerator(z.null(), ResponseStatus.Error),
     },
     body: ForgetPasswordInputSchema,
@@ -29,9 +31,10 @@ export const verificationContract = c.router({
   },
   resetPassword: {
     method: 'POST',
-    path: '/verification/verify-email',
+    path: '/verification/reset-password',
     responses: {
       200: ResponseSchemaGenerator(z.null(), ResponseStatus.Success),
+      404: ResponseSchemaGenerator(z.null(), ResponseStatus.Fail),
       500: ResponseSchemaGenerator(z.null(), ResponseStatus.Error),
     },
     body: ResetPasswordInputSchema,
