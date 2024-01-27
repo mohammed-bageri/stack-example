@@ -37,8 +37,8 @@ export class AuthenticationService {
     return null;
   }
 
-  async signUp(user: SignUpInput) {
-    const { password, ...rest } = user;
+  async signUp(body: SignUpInput) {
+    const { password, ...rest } = body;
     const pwd = await this.hashingService.hash(password);
     const token = await this.hashingService.hash(
       crypto.randomBytes(40).toString('hex'),
@@ -64,8 +64,8 @@ export class AuthenticationService {
 
     if (result) {
       await this.mailService.sendVerificationEmail(
-        user.name,
-        user.email,
+        body.name,
+        body.email,
         token,
       );
     }
@@ -78,19 +78,19 @@ export class AuthenticationService {
     );
   }
 
-  async signIn(user: User) {
+  async signIn(body: User) {
     return generateResponse<{
       accessToken: string;
       email: string;
       name: string;
     }>(200, 'تم تسجيل الدخول بنجاح', ResponseStatus.Success, {
       accessToken: await generateToken(
-        user,
+        body,
         this.jwtService,
         this.jwtConfiguration,
       ),
-      email: user.email,
-      name: user.name,
+      email: body.email,
+      name: body.name,
     });
   }
 

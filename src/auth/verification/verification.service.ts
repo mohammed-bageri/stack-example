@@ -19,8 +19,8 @@ export class VerificationService {
     private mailService: MailService,
   ) {}
 
-  async verifyEmail(verifyEmailDto: VerifyEmailInput) {
-    const { token, email } = verifyEmailDto;
+  async verifyEmail(body: VerifyEmailInput) {
+    const { token, email } = body;
     const user = await this.prismaService.user.findUnique({
       where: {
         email: email,
@@ -56,8 +56,8 @@ export class VerificationService {
     );
   }
 
-  async forgotPassword(forgotPasswordDto: ForgetPasswordInput) {
-    const { email } = forgotPasswordDto;
+  async forgotPassword(body: ForgetPasswordInput) {
+    const { email } = body;
     const user = await this.prismaService.user.findUnique({
       where: {
         email: email,
@@ -96,8 +96,8 @@ export class VerificationService {
     );
   }
 
-  async resetPassword(resetPasswordDto: ResetPasswordInput) {
-    const { token, email, password } = resetPasswordDto;
+  async resetPassword(body: ResetPasswordInput) {
+    const { token, email, password } = body;
     const user = await this.prismaService.user.findUnique({
       where: {
         email: email,

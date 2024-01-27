@@ -1,9 +1,15 @@
 import {
   CategoryCreateInputSchema,
+  CategoryFindManyArgsSchema,
   CategorySchema,
   CategoryUpdateInputSchema,
 } from '../types';
-import { ResponseSchemaGenerator, ResponseStatus, c } from '../helpers';
+import {
+  QuerySchemaGenerator,
+  ResponseSchemaGenerator,
+  ResponseStatus,
+  c,
+} from '../helpers';
 import { z } from 'zod';
 
 export const categoryContract = c.router(
@@ -35,11 +41,7 @@ export const categoryContract = c.router(
       headers: z.object({
         pagination: z.string().optional(),
       }),
-      query: z.object({
-        take: z.string().transform(Number).optional(),
-        skip: z.string().transform(Number).optional(),
-        search: z.string().optional(),
-      }),
+      query: QuerySchemaGenerator(CategoryFindManyArgsSchema),
       summary: 'Get all Categorys',
     },
     getCategory: {

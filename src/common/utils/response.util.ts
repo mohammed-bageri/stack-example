@@ -5,6 +5,7 @@ export const generateResponse = <T>(
   message: string,
   type: ResponseStatus,
   data: T,
+  meta?: any,
 ) => {
   return {
     status: status,
@@ -12,6 +13,7 @@ export const generateResponse = <T>(
       message,
       status: type,
       data,
+      meta,
     },
   } as const;
 };

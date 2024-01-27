@@ -1,9 +1,15 @@
 import {
   UserCreateInputSchema,
+  UserFindManyArgsSchema,
   UserSchema,
   UserUpdateInputSchema,
 } from '../types';
-import { ResponseSchemaGenerator, ResponseStatus, c } from '../helpers';
+import {
+  QuerySchemaGenerator,
+  ResponseSchemaGenerator,
+  ResponseStatus,
+  c,
+} from '../helpers';
 import { z } from 'zod';
 
 export const userContract = c.router(
@@ -32,14 +38,7 @@ export const userContract = c.router(
         403: ResponseSchemaGenerator(z.null(), ResponseStatus.Fail),
         500: ResponseSchemaGenerator(z.null(), ResponseStatus.Error),
       },
-      headers: z.object({
-        pagination: z.string().optional(),
-      }),
-      query: z.object({
-        take: z.string().transform(Number).optional(),
-        skip: z.string().transform(Number).optional(),
-        search: z.string().optional(),
-      }),
+      query: QuerySchemaGenerator(UserFindManyArgsSchema),
       summary: 'Get all Users',
     },
     getUser: {

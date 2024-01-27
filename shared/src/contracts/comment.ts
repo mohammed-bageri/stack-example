@@ -1,9 +1,15 @@
 import {
   CommentCreateInputSchema,
+  CommentFindManyArgsSchema,
   CommentSchema,
   CommentUpdateInputSchema,
 } from '../types';
-import { ResponseSchemaGenerator, ResponseStatus, c } from '../helpers';
+import {
+  QuerySchemaGenerator,
+  ResponseSchemaGenerator,
+  ResponseStatus,
+  c,
+} from '../helpers';
 import { z } from 'zod';
 
 export const commentContract = c.router(
@@ -35,11 +41,7 @@ export const commentContract = c.router(
       headers: z.object({
         pagination: z.string().optional(),
       }),
-      query: z.object({
-        take: z.string().transform(Number).optional(),
-        skip: z.string().transform(Number).optional(),
-        search: z.string().optional(),
-      }),
+      query: QuerySchemaGenerator(CommentFindManyArgsSchema),
       summary: 'Get all Comments',
     },
     getComment: {

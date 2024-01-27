@@ -1,34 +1,62 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Req, UseGuards } from '@nestjs/common';
+import { EmailVerifiedGuard } from 'src/auth/authorization/guards/email-verified.guard';
+import { AuthType } from 'src/auth/authentication/enums/auth-type.enum';
+import { Auth } from 'src/auth/authentication/decorators/auth.decorator';
+import { Permissions } from 'src/auth/authorization/decorators/permissions.decorator';
 import { CommentService } from './comment.service';
-import { CreateCommentDto } from './dto/create-comment.dto';
-import { UpdateCommentDto } from './dto/update-comment.dto';
+import { Permission } from '@prisma/client';
+import { TsRestHandler, tsRestHandler } from '@ts-rest/nest';
+import { contract } from '@app/shared';
 
-@Controller('comment')
+@Auth(AuthType.JWT)
+@UseGuards(EmailVerifiedGuard)
+@Controller()
 export class CommentController {
-  constructor(private readonly commentService: CommentService) {}
+  constructor(private commentService: CommentService) {}
 
-  @Post()
-  create(@Body() createCommentDto: CreateCommentDto) {
-    return this.commentService.create(createCommentDto);
+  @Permissions(Permission.CREATE_COMMENT)
+  @TsRestHandler(contract.comments.createComment)
+  create() {
+    return tsRestHandler(contract.comments.createComment, async ({ body }) => {
+      return this.commentService.create(body);
+    });
   }
 
-  @Get()
-  findAll() {
-    return this.commentService.findAll();
+  @Permissions(Permission.READ_COMMENT)
+  @TsRestHandler(contract.comments.getComments, { jsonQuery: true })
+  getAll(@Req() req: Request) {
+    return tsRestHandler(contract.comments.getComments, async ({ query }) => {
+      return this.commentService.getAll(query, req.url);
+    });
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.commentService.findOne(+id);
+  @Permissions(Permission.READ_COMMENT)
+  @TsRestHandler(contract.comments.getComment)
+  getOne() {
+    return tsRestHandler(contract.comments.getComment, async ({ params }) => {
+      return this.commentService.getOne(params.id);
+    });
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateCommentDto: UpdateCommentDto) {
-    return this.commentService.update(+id, updateCommentDto);
+  @Permissions(Permission.UPDATE_COMMENT)
+  @TsRestHandler(contract.comments.updateComment)
+  update() {
+    return tsRestHandler(
+      contract.comments.updateComment,
+      async ({ params, body }) => {
+        return this.commentService.update(params.id, body);
+      },
+    );
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.commentService.remove(+id);
+  @Permissions(Permission.DELETE_COMMENT)
+  @TsRestHandler(contract.comments.deleteComment)
+  delete() {
+    return tsRestHandler(
+      contract.comments.deleteComment,
+      async ({ params }) => {
+        return this.commentService.delete(params.id);
+      },
+    );
   }
 }

@@ -58,4 +58,20 @@ export type CategoryUpdateInput = z.infer<typeof CategoryUpdateInputSchema>;
 export type CommentCreateInput = z.infer<typeof CommentCreateInputSchema>;
 export type CommentUpdateInput = z.infer<typeof CommentUpdateInputSchema>;
 
+export const MetaResultSchema = z
+  .object({
+    total: z.number().default(0),
+    pageSize: z.number(),
+    pageCount: z.number(),
+    currentPage: z.number(),
+    firstPage: z.number(),
+    lastPage: z.number(),
+    firstPageUrl: z.string().or(z.null()),
+    lastPageUrl: z.string().or(z.null()),
+    prevPageUrl: z.string().or(z.null()),
+    nextPageUrl: z.string().or(z.null()),
+  })
+  .optional();
+export type MetaResult = z.infer<typeof MetaResultSchema>;
+
 export * from './zod';

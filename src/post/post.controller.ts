@@ -1,34 +1,59 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Req, UseGuards } from '@nestjs/common';
+import { EmailVerifiedGuard } from 'src/auth/authorization/guards/email-verified.guard';
+import { AuthType } from 'src/auth/authentication/enums/auth-type.enum';
+import { Auth } from 'src/auth/authentication/decorators/auth.decorator';
+import { Permissions } from 'src/auth/authorization/decorators/permissions.decorator';
 import { PostService } from './post.service';
-import { CreatePostDto } from './dto/create-post.dto';
-import { UpdatePostDto } from './dto/update-post.dto';
+import { Permission } from '@prisma/client';
+import { TsRestHandler, tsRestHandler } from '@ts-rest/nest';
+import { contract } from '@app/shared';
 
-@Controller('post')
+@Auth(AuthType.JWT)
+@UseGuards(EmailVerifiedGuard)
+@Controller()
 export class PostController {
-  constructor(private readonly postService: PostService) {}
+  constructor(private postService: PostService) {}
 
-  @Post()
-  create(@Body() createPostDto: CreatePostDto) {
-    return this.postService.create(createPostDto);
+  @Permissions(Permission.CREATE_POST)
+  @TsRestHandler(contract.posts.createPost)
+  create() {
+    return tsRestHandler(contract.posts.createPost, async ({ body }) => {
+      return this.postService.create(body);
+    });
   }
 
-  @Get()
-  findAll() {
-    return this.postService.findAll();
+  @Permissions(Permission.READ_POST)
+  @TsRestHandler(contract.posts.getPosts, { jsonQuery: true })
+  getAll(@Req() req: Request) {
+    return tsRestHandler(contract.posts.getPosts, async ({ query }) => {
+      return this.postService.getAll(query, req.url);
+    });
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.postService.findOne(+id);
+  @Permissions(Permission.READ_POST)
+  @TsRestHandler(contract.posts.getPost)
+  getOne() {
+    return tsRestHandler(contract.posts.getPost, async ({ params }) => {
+      return this.postService.getOne(params.id);
+    });
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePostDto: UpdatePostDto) {
-    return this.postService.update(+id, updatePostDto);
+  @Permissions(Permission.UPDATE_POST)
+  @TsRestHandler(contract.posts.updatePost)
+  update() {
+    return tsRestHandler(
+      contract.posts.updatePost,
+      async ({ params, body }) => {
+        return this.postService.update(params.id, body);
+      },
+    );
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.postService.remove(+id);
+  @Permissions(Permission.DELETE_POST)
+  @TsRestHandler(contract.posts.deletePost)
+  delete() {
+    return tsRestHandler(contract.posts.deletePost, async ({ params }) => {
+      return this.postService.delete(params.id);
+    });
   }
 }

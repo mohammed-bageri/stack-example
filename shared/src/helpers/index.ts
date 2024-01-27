@@ -1,5 +1,6 @@
 import { initContract } from '@ts-rest/core';
 import { z } from 'zod';
+import { MetaResultSchema } from '../types';
 type ContractInstance = ReturnType<typeof initContract>;
 export const c: ContractInstance = initContract();
 
@@ -19,6 +20,7 @@ export const ResponseSchemaGenerator = (
         message: z.string(),
         status: z.nativeEnum(ResponseStatus).default(ResponseStatus.Success),
         data: schema,
+        meta: MetaResultSchema,
       });
     case ResponseStatus.Fail:
       return z.object({
@@ -40,4 +42,12 @@ export const ResponseSchemaGenerator = (
         data: z.null(),
       });
   }
+};
+
+export const QuerySchemaGenerator = (schema: z.ZodSchema) => {
+  return z.object({
+    page: z.string().transform(Number).optional(),
+    limit: z.string().transform(Number).optional(),
+    search: schema.optional(),
+  });
 };
